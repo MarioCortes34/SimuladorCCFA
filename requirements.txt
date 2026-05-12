@@ -1,0 +1,2 @@
+Django==5.2.14
+django-ratelimit==4.1.0

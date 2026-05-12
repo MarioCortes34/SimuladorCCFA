@@ -1,0 +1,92 @@
+{% extends "simulador/base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-2">
+  <small class="text-cs-muted">Pregunta {{ vistas|add:1 }} de {{ total_modo }}</small>
+  <small class="text-cs-muted">✓ {{ correctas }} &nbsp;✗ {{ incorrectas }}</small>
+</div>
+<div class="progress-cs mb-3"><div class="bar" style="width:{{ progreso }}%"></div></div>
+
+{% if pregunta.categoria != 'General' %}
+<div class="mb-3"><span class="badge-cat">{{ pregunta.categoria }}</span></div>
+{% endif %}
+
+<div class="card-cs p-4 mb-3">
+  <p class="text-cs-muted small mb-2">#{{ pregunta.numero }}</p>
+  <h5 class="mb-4" style="line-height:1.6">{{ pregunta.enunciado }}</h5>
+  <div id="opciones">
+    {% for op in pregunta.opciones %}
+    <button class="opcion-btn" data-opcion="{{ op }}">{{ op }}</button>
+    {% endfor %}
+  </div>
+  <div id="panel" style="display:none;margin-top:1rem;padding:1rem;border-radius:.5rem;"></div>
+  <div id="panel-tip" style="display:none;margin-top:.75rem;padding:1rem;border-radius:.5rem;background:#111;border:1px solid #2a2a2a;">
+    <p style="font-size:.72rem;font-weight:700;letter-spacing:1px;color:#888;text-transform:uppercase;margin:0 0 .5rem">💬 Feedback en Español</p>
+    <div id="tip-contenido" style="font-size:.85rem;line-height:1.6;color:#ccc"></div>
+  </div>
+</div>
+
+<div id="wrap-sig" style="display:none" class="d-flex justify-content-between align-items-center">
+  <a href="/" class="text-cs-muted small text-decoration-none">← Menú</a>
+  <a id="btn-sig" href="/quiz/?modo={{ modo }}" class="btn-cs-primary">Siguiente →</a>
+</div>
+
+<style>
+.opcion-btn {
+  display:block;width:100%;text-align:left;background:#1a1a1a;
+  border:2px solid #2a2a2a;color:#F8F8F8;padding:.75rem 1rem;
+  border-radius:.5rem;margin-bottom:.5rem;cursor:pointer;transition:all .15s;font-size:.92rem;
+}
+.opcion-btn:hover:not(:disabled){border-color:#EC0000;background:#222;}
+.opcion-btn.ok {background:#052e16;border-color:#16a34a;color:#86efac;}
+.opcion-btn.mal{background:#1a0000;border-color:#EC0000;color:#fca5a5;}
+.opcion-btn.rev{background:#111827;border-color:#6b7280;color:#d1d5db;}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const CSRF = "{{ csrf_token }}";
+const PID  = "{{ pregunta.pk }}";
+const MODO = "{{ modo }}";
+let respondido = false;
+
+document.querySelectorAll('.opcion-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    if (respondido) return;
+    respondido = true;
+    const resp = this.dataset.opcion;
+    fetch("/verificar/", {
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRFToken':CSRF},
+      body: new URLSearchParams({pregunta_id:PID, respuesta:resp, modo:MODO}),
+    })
+    .then(r => r.json())
+    .then(data => {
+      // Extrae la letra A/B/C/D de un texto de opción
+      const letra = t => { const m = t.trim().match(/^([A-Da-d])[.):]?\s/); return m ? m[1].toUpperCase() : t.trim(); };
+      const letraCorrecta = letra(data.respuesta_correcta);
+      document.querySelectorAll('.opcion-btn').forEach(b => {
+        b.disabled = true;
+        const letraBtn = letra(b.dataset.opcion);
+        if (b.dataset.opcion === resp) b.classList.add(data.correcto ? 'ok' : 'mal');
+        if (!data.correcto && letraBtn === letraCorrecta) b.classList.add('rev');
+      });
+      const p = document.getElementById('panel');
+      p.style.display = 'block';
+      p.style.background = data.correcto ? '#052e16' : '#1a0000';
+      p.style.border = '1px solid ' + (data.correcto ? '#16a34a' : '#EC0000');
+      p.innerHTML = `<strong style="font-size:1rem">${data.correcto ? '✓ Correct!' : '✗ Incorrect'}</strong><br>
+        <span style="font-size:.88rem;color:#ccc">Answer: ${data.respuesta_correcta}</span>`;
+
+      // Tip en español
+      if (data.tip) {
+        const t = document.getElementById('panel-tip');
+        document.getElementById('tip-contenido').innerHTML = data.tip;
+        t.style.display = 'block';
+      }
+      document.getElementById('wrap-sig').style.display = 'flex';
+    });
+  });
+});
+</script>
+{% endblock %}

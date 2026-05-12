@@ -1,0 +1,146 @@
+{% extends "simulador/base.html" %}
+{% block title %}Simulador CCFA — CrowdStrike{% endblock %}
+{% block content %}
+
+<style>
+.hero { text-align:center; padding: 3rem 0 2rem; }
+.hero-title { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+.hero-sub { color: var(--cs-muted); font-size: .95rem; margin-top: .75rem; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Stat pills */
+.stats-row { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; }
+.stat-pill {
+  background: #111; border: 1px solid #2a2a2a; border-radius: 999px;
+  padding: .5rem 1.25rem; display: flex; align-items: center; gap: .6rem;
+}
+.stat-pill .num { font-size: 1.1rem; font-weight: 800; color: var(--cs-red); }
+.stat-pill .lbl { font-size: .75rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: .5px; }
+
+/* Acción principal */
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+@media(max-width:600px){ .action-grid { grid-template-columns: 1fr; } }
+
+.action-card {
+  background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: .75rem;
+  padding: 1.5rem; text-decoration: none; color: inherit;
+  transition: border-color .2s, transform .15s; cursor: pointer;
+  display: block;
+}
+.action-card:hover { border-color: var(--cs-red); transform: translateY(-2px); color: inherit; }
+.action-card.primary { border-color: #3a0000; background: #0d0000; }
+.action-card.primary:hover { border-color: var(--cs-red); background: #150000; }
+
+.action-card .icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.action-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .25rem; }
+.action-card p  { font-size: .8rem; color: var(--cs-muted); margin: 0; line-height: 1.4; }
+.action-card .tag {
+  display: inline-block; margin-top: .75rem; background: var(--cs-red);
+  color: #fff; font-size: .7rem; font-weight: 700; padding: .2rem .6rem;
+  border-radius: 4px; letter-spacing: .5px;
+}
+
+/* Módulos del examen */
+.section-title { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cs-muted); margin: 2rem 0 .75rem; }
+.modules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: .75rem; }
+.module-card {
+  background: #0f0f0f; border: 1px solid #222; border-radius: .6rem;
+  padding: 1rem; transition: border-color .2s; cursor: default;
+}
+.module-card:hover { border-color: #444; }
+.module-card .m-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+.module-card .m-name { font-size: .78rem; font-weight: 700; color: #ccc; line-height: 1.3; }
+.module-card .m-desc { font-size: .7rem; color: var(--cs-muted); margin-top: .25rem; line-height: 1.4; }
+
+/* Progreso bar */
+.prog-wrap { background: #111; border: 1px solid #222; border-radius: .75rem; padding: 1.25rem; margin-top: 1rem; }
+.prog-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: .6rem; }
+.prog-row h6 { margin: 0; font-size: .85rem; font-weight: 700; }
+.prog-row a { font-size: .75rem; color: var(--cs-red); text-decoration: none; }
+.progress-cs { background: #222; height: 6px; border-radius: 3px; overflow: hidden; }
+.progress-cs .bar { background: var(--cs-red); border-radius: 3px; height: 100%; transition: width .5s ease; }
+.prog-stats { display: flex; gap: 1.5rem; margin-top: .75rem; }
+.prog-stats span { font-size: .75rem; color: var(--cs-muted); }
+.prog-stats strong { color: var(--cs-white); }
+
+/* Estudio por categoría */
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; }
+.cat-btn {
+  background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: .5rem;
+  padding: .65rem 1rem; color: var(--cs-white); text-decoration: none;
+  font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: .5rem;
+  transition: all .15s;
+}
+.cat-btn:hover { border-color: var(--cs-red); color: var(--cs-white); background: #150000; }
+.cat-btn .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cs-red); flex-shrink: 0; }
+</style>
+
+<!-- Hero -->
+<div class="hero">
+  <p style="color:var(--cs-red);font-size:.7rem;letter-spacing:3px;font-weight:700;text-transform:uppercase">Simulador Oficial</p>
+  <h1 class="hero-title">CrowdStrike<br><span style="color:var(--cs-red)">CCFA</span></h1>
+  <p class="hero-sub">Certified Falcon Administrator · Exam Simulator</p>
+
+  <div class="stats-row">
+    <div class="stat-pill"><span class="num">{{ total }}</span><span class="lbl">Preguntas</span></div>
+    <div class="stat-pill"><span class="num">60</span><span class="lbl">Por examen</span></div>
+    <div class="stat-pill"><span class="num">75%</span><span class="lbl">Para aprobar</span></div>
+    <div class="stat-pill"><span class="num">{{ dominadas }}</span><span class="lbl">Dominadas</span></div>
+  </div>
+</div>
+
+<!-- Acciones principales -->
+<div class="action-grid">
+  <a href="/examen/iniciar/" class="action-card primary">
+    <span class="icon">🎯</span>
+    <h3>Examen Simulado</h3>
+    <p>60 preguntas al azar · Condiciones reales de certificación</p>
+    <span class="tag">INICIAR →</span>
+  </a>
+  <a href="/quiz/?modo=aleatorio&reiniciar=1" class="action-card">
+    <span class="icon">📚</span>
+    <h3>Modo Estudio</h3>
+    <p>Sin presión · Revisa la respuesta correcta en cada pregunta</p>
+    <span class="tag" style="background:#222;color:#aaa">ESTUDIAR →</span>
+  </a>
+</div>
+
+<!-- Estudio por categoría -->
+<p class="section-title">Estudiar por Categoría</p>
+<div class="cat-grid">
+  {% for cat in categorias %}
+  <a href="/quiz/?modo=cat_{{ cat|urlencode }}&reiniciar=1" class="cat-btn">
+    <span class="dot"></span>{{ cat }}
+  </a>
+  {% endfor %}
+</div>
+
+<!-- Módulos del examen -->
+<p class="section-title">Módulos del Examen</p>
+<div class="modules-grid">
+  <div class="module-card"><div class="m-icon">🏗️</div><div class="m-name">Core Architecture</div><div class="m-desc">AID, CID, Single Agent, Cloud-Native, RFM</div></div>
+  <div class="module-card"><div class="m-icon">🔍</div><div class="m-name">IOA / IOC / ML</div><div class="m-desc">Detección por comportamiento, evidencia forense y Machine Learning</div></div>
+  <div class="module-card"><div class="m-icon">📋</div><div class="m-name">Policy Management</div><div class="m-desc">Prevention, Sensor Update, Default Policies, Host Groups</div></div>
+  <div class="module-card"><div class="m-icon">🚫</div><div class="m-name">Exclusions</div><div class="m-desc">ML, IOA y Sensor Visibility Exclusions</div></div>
+  <div class="module-card"><div class="m-icon">🔐</div><div class="m-name">RBAC & Audit</div><div class="m-desc">Roles, permisos y retención de logs (365 / 90 días)</div></div>
+  <div class="module-card"><div class="m-icon">⚡</div><div class="m-name">RTR & Fusion SOAR</div><div class="m-desc">Respuesta remota y automatización de workflows</div></div>
+  <div class="module-card"><div class="m-icon">👁️</div><div class="m-name">OverWatch</div><div class="m-desc">Threat Hunting 24/7 por el equipo humano de CrowdStrike</div></div>
+  <div class="module-card"><div class="m-icon">📊</div><div class="m-name">Audit Logs</div><div class="m-desc">UI · API · Prevention Policy · RTR logs</div></div>
+</div>
+
+<!-- Barra de progreso -->
+<div class="prog-wrap">
+  <div class="prog-row">
+    <h6>Tu Progreso Global</h6>
+    <a href="/progreso/">Ver detalle →</a>
+  </div>
+  <div class="progress-cs">
+    <div class="bar" style="width:{% if total %}{% widthratio dominadas total 100 %}{% else %}0{% endif %}%"></div>
+  </div>
+  <div class="prog-stats">
+    <span><strong>{{ dominadas }}</strong> dominadas</span>
+    <span><strong>{{ total|add:"-"|add:dominadas|stringformat:"d" }}</strong> pendientes</span>
+    <span><strong>{{ total }}</strong> total</span>
+  </div>
+</div>
+
+{% endblock %}

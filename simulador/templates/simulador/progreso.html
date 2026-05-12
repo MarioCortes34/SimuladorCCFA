@@ -1,0 +1,95 @@
+{% extends "simulador/base.html" %}
+{% block title %}Mi Progreso – CCFA{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-4">📊 Mi Progreso</h4>
+
+<!-- Resumen -->
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <div class="card-cs p-3 text-center">
+      <div class="fw-bold" style="font-size:2rem;color:var(--cs-green)">{{ dominadas|length }}</div>
+      <small class="text-cs-muted">Dominadas</small>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card-cs p-3 text-center">
+      <div class="fw-bold" style="font-size:2rem;color:var(--cs-orange)">{{ en_progreso|length }}</div>
+      <small class="text-cs-muted">En progreso</small>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card-cs p-3 text-center">
+      <div class="fw-bold" style="font-size:2rem;color:var(--cs-muted)">{{ sin_ver }}</div>
+      <small class="text-cs-muted">Sin ver</small>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card-cs p-3 text-center">
+      <div class="fw-bold" style="font-size:2rem;color:var(--cs-red)">{{ pct_dom }}%</div>
+      <small class="text-cs-muted">Dominado</small>
+    </div>
+  </div>
+</div>
+
+<!-- Barra global -->
+<div class="card-cs p-3 mb-4">
+  <div class="d-flex justify-content-between mb-1">
+    <small class="text-cs-muted">Progreso total</small>
+    <small class="text-cs-muted">{{ dominadas|length }}/{{ total_q }}</small>
+  </div>
+  <div class="progress-cs"><div class="bar" style="width:{{ pct_dom }}%"></div></div>
+</div>
+
+<!-- Por categoría -->
+{% if cats %}
+<div class="card-cs p-4 mb-4">
+  <h6 class="fw-bold mb-3">Por Categoría</h6>
+  {% for cat, datos in cats.items %}
+  <div class="mb-3">
+    <div class="d-flex justify-content-between mb-1">
+      <span class="badge-cat">{{ cat }}</span>
+      <small class="text-cs-muted">{{ datos.dominadas }}/{{ datos.total_vistas }} vistas</small>
+    </div>
+    <div class="progress-cs">
+      <div class="bar" style="width:{% if datos.total_vistas %}{% widthratio datos.dominadas datos.total_vistas 100 %}{% else %}0{% endif %}%"></div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Preguntas dominadas -->
+{% if dominadas %}
+<div class="card-cs p-4 mb-3">
+  <h6 class="fw-bold mb-3" style="color:var(--cs-green)">✓ Preguntas Dominadas</h6>
+  <p class="text-cs-muted small mb-3">Contestadas correctamente en todas las veces que aparecieron (mín. 2).</p>
+  {% for r in dominadas %}
+  <div class="d-flex justify-content-between align-items-start border-bottom py-2" style="border-color:var(--cs-border)!important">
+    <div style="max-width:80%">
+      <span class="badge-cat me-2">{{ r.pregunta.categoria }}</span>
+      <span class="small">{{ r.pregunta.enunciado|truncatechars:80 }}</span>
+    </div>
+    <small class="text-cs-muted text-nowrap ms-2">{{ r.veces_correcta }}/{{ r.veces_vista }} ✓</small>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Preguntas que necesitan repaso -->
+{% if en_progreso %}
+<div class="card-cs p-4">
+  <h6 class="fw-bold mb-3" style="color:var(--cs-orange)">⚠ Necesitan Repaso</h6>
+  <p class="text-cs-muted small mb-3">Preguntas que fallaste al menos una vez.</p>
+  {% for r in en_progreso %}
+  <div class="d-flex justify-content-between align-items-start border-bottom py-2" style="border-color:var(--cs-border)!important">
+    <div style="max-width:80%">
+      <span class="badge-cat me-2">{{ r.pregunta.categoria }}</span>
+      <span class="small">{{ r.pregunta.enunciado|truncatechars:80 }}</span>
+    </div>
+    <small style="color:var(--cs-danger)" class="text-nowrap ms-2">{{ r.veces_correcta }}/{{ r.veces_vista }} ✓</small>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

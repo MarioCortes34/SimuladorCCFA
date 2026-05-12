@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Simulador CCFA{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --cs-red:    #EC0000;
+      --cs-black:  #000000;
+      --cs-white:  #F8F8F8;
+      --cs-bg:     #0a0a0a;
+      --cs-card:   #111111;
+      --cs-card2:  #1a1a1a;
+      --cs-border: #2a2a2a;
+      --cs-muted:  #888888;
+      --cs-green:  #16a34a;
+      --cs-danger: #EC0000;
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--cs-bg); color: var(--cs-white); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    /* ── Navbar ── */
+    .navbar-cs {
+      background: var(--cs-black);
+      border-bottom: 2px solid var(--cs-red);
+      padding: 0;
+    }
+    .navbar-inner {
+      display: flex; align-items: stretch;
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .brand-logo {
+      font-size: 1rem; font-weight: 800; letter-spacing: 2px;
+      color: var(--cs-white); text-decoration: none;
+      padding: 1rem 1.5rem 1rem 0; border-right: 1px solid #222;
+      margin-right: 1rem; white-space: nowrap;
+    }
+    .brand-logo .red { color: var(--cs-red); }
+    .nav-links { display: flex; align-items: center; gap: .25rem; }
+    .nav-link-cs {
+      color: var(--cs-muted); font-size: .8rem; font-weight: 500;
+      text-decoration: none; padding: .5rem .75rem; border-radius: .375rem;
+      letter-spacing: .5px; text-transform: uppercase; transition: all .15s;
+    }
+    .nav-link-cs:hover { color: var(--cs-white); background: #1a1a1a; }
+
+    /* ── Cards ── */
+    .card-cs {
+      background: var(--cs-card); border: 1px solid var(--cs-border);
+      border-radius: .75rem;
+    }
+
+    /* ── Botones ── */
+    .btn-cs-primary {
+      display: inline-block; background: var(--cs-red); border: none;
+      color: var(--cs-white); font-weight: 700; padding: .65rem 1.75rem;
+      border-radius: .5rem; cursor: pointer; text-decoration: none;
+      font-size: .9rem; letter-spacing: .5px; transition: opacity .15s;
+    }
+    .btn-cs-primary:hover { opacity: .85; color: var(--cs-white); }
+    .btn-cs-outline {
+      display: inline-block; background: transparent;
+      border: 1px solid var(--cs-border); color: var(--cs-white);
+      border-radius: .5rem; padding: .65rem 1.75rem; text-decoration: none;
+      font-size: .9rem; cursor: pointer; transition: all .15s;
+    }
+    .btn-cs-outline:hover { border-color: var(--cs-red); color: var(--cs-red); }
+
+    /* ── Badge categoría ── */
+    .badge-cat {
+      background: rgba(236,0,0,.12); color: #ff6666; font-size: .7rem;
+      padding: .2rem .6rem; border-radius: 999px;
+      border: 1px solid rgba(236,0,0,.25); font-weight: 600;
+    }
+
+    /* ── Barra de progreso ── */
+    .progress-cs { background: #222; height: 5px; border-radius: 3px; overflow: hidden; }
+    .progress-cs .bar {
+      background: var(--cs-red); border-radius: 3px;
+      height: 100%; transition: width .4s ease;
+    }
+
+    /* ── Helpers ── */
+    .text-cs-muted { color: var(--cs-muted); }
+    .text-cs-red   { color: var(--cs-red); }
+    .text-cs-green { color: var(--cs-green); }
+    .divider       { border-color: var(--cs-border) !important; }
+  </style>
+</head>
+<body>
+<nav class="navbar-cs">
+  <div class="navbar-inner">
+    <a href="/" class="brand-logo">CROWD<span class="red">STRIKE</span> &nbsp;·&nbsp; CCFA</a>
+    <div class="nav-links">
+      <a href="/"                class="nav-link-cs">Inicio</a>
+      <a href="/examen/iniciar/" class="nav-link-cs">Examen</a>
+      <a href="/quiz/"           class="nav-link-cs">Estudio</a>
+      <a href="/progreso/"       class="nav-link-cs">Progreso</a>
+    </div>
+  </div>
+</nav>
+<div class="container py-4">
+  {% block content %}{% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

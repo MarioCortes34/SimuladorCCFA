@@ -1,0 +1,41 @@
+{% extends "simulador/base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-6 text-center">
+    <div class="card p-5">
+      <h1 class="display-4 mb-3">🎯</h1>
+      <h2 class="fw-bold mb-4">Ronda Completada</h2>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4">
+          <div class="card p-3" style="border-color:#38a169">
+            <div class="fs-2 fw-bold" style="color:#38a169">{{ correctas }}</div>
+            <small class="text-secondary">Correctas</small>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card p-3" style="border-color:#e53e3e">
+            <div class="fs-2 fw-bold" style="color:#e53e3e">{{ incorrectas }}</div>
+            <small class="text-secondary">Incorrectas</small>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card p-3">
+            <div class="fs-2 fw-bold">
+              {% if total %}{{ correctas|floatformat:0 }}%{% else %}0%{% endif %}
+            </div>
+            <small class="text-secondary">de {{ total }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2">
+        <a href="{% url 'quiz' %}?modo={{ modo }}&reiniciar=1" class="btn btn-danger">
+          Repetir esta ronda
+        </a>
+        <a href="/" class="btn btn-outline-light">Cambiar modo</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -5,7 +5,7 @@ Importa todo de settings.py base y sobreescribe lo necesario.
 from .settings import *
 
 # Cambia esto por tu usuario de PythonAnywhere
-PYTHONANYWHERE_USER = 'TUUSUARIO'
+PYTHONANYWHERE_USER = 'MUCH34'
 
 ALLOWED_HOSTS = [
     f'{PYTHONANYWHERE_USER}.pythonanywhere.com',

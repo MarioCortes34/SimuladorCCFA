@@ -114,20 +114,15 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
 .cob-pill-mal { background: #1a0000; color: #f87171; border-color: #7f1d1d; }
 .cob-pill-neu { background: #111; color: #888; border-color: #2a2a2a; }
 
-/* Tooltip puro CSS */
-.cob-pill::after {
-  content: attr(data-tip);
-  display: none;
-  position: absolute;
-  bottom: calc(100% + 5px); left: 50%;
+/* Tooltip — renderizado por JS en position:fixed para evitar clipping del overflow */
+#cob-tooltip {
+  display: none; position: fixed; z-index: 9999;
+  background: #1a1a1a; border: 1px solid #444; border-radius: .35rem;
+  padding: .4rem .7rem; font-size: .7rem; font-weight: 400;
+  white-space: nowrap; color: #e5e7eb; pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,.7);
   transform: translateX(-50%);
-  background: #1a1a1a; border: 1px solid #444;
-  border-radius: .35rem; padding: .4rem .7rem;
-  font-size: .7rem; font-weight: 400; white-space: nowrap; color: #e5e7eb;
-  pointer-events: none; z-index: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,.6);
 }
-.cob-pill:hover::after { display: block; }
 
 /* Inestables */
 .inest-item {
@@ -479,5 +474,39 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   </div>
 </details>
 {% endif %}
+
+<!-- Tooltip flotante para Mis Victorias -->
+<div id="cob-tooltip"></div>
+
+{% block scripts %}
+<script>
+(function() {
+  const tip = document.getElementById('cob-tooltip');
+  document.querySelectorAll('.cob-pill[data-tip]').forEach(function(el) {
+    el.addEventListener('mouseenter', function(e) {
+      tip.textContent = el.dataset.tip;
+      tip.style.display = 'block';
+      posicionar(e);
+    });
+    el.addEventListener('mousemove', posicionar);
+    el.addEventListener('mouseleave', function() {
+      tip.style.display = 'none';
+    });
+  });
+  function posicionar(e) {
+    const GAP = 10;
+    const tw = tip.offsetWidth;
+    const th = tip.offsetHeight;
+    let x = e.clientX;
+    let y = e.clientY - th - GAP;
+    if (y < 4) y = e.clientY + GAP;
+    if (x - tw / 2 < 4) x = tw / 2 + 4;
+    if (x + tw / 2 > window.innerWidth - 4) x = window.innerWidth - tw / 2 - 4;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+})();
+</script>
+{% endblock %}
 
 {% endblock %}

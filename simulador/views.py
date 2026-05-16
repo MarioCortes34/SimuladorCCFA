@@ -234,6 +234,7 @@ def seleccionar_tenant(request):
     return render(request, 'simulador/seleccionar_tenant.html', {
         'tenants': tenants,
         'tenant_actual': tenant_actual,
+        'tenant': tenant_actual,
     })
 
 

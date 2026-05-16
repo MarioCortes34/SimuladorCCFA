@@ -1,22 +1,62 @@
 {% extends "simulador/base.html" %}
 {% block title %}Resultado – Simulador CCFA{% endblock %}
 {% block content %}
-<div class="row justify-content-center">
-<div class="col-lg-6">
-<div class="card-cs p-5 text-center">
 
-  {% if aprobado %}
-  <div style="font-size:4rem">🏆</div>
-  <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡APROBADO!</h2>
-  <p class="text-cs-muted">Cumpliste el mínimo requerido para la certificación CCFA</p>
+<style>
+.result-item {
+  border-bottom: 1px solid var(--cs-border);
+  padding: 1rem 0;
+}
+.result-item:last-child { border-bottom: none; }
+.opcion-res {
+  display: block; width: 100%; text-align: left;
+  padding: .5rem .85rem; border-radius: .4rem; margin-bottom: .3rem;
+  font-size: .85rem; border: 1px solid transparent;
+}
+.opcion-res.elegida-ok  { background: #052e16; border-color: #16a34a; color: #86efac; }
+.opcion-res.elegida-mal { background: #1a0000; border-color: #EC0000; color: #fca5a5; }
+.opcion-res.correcta-reveal { background: #052e16; border-color: #16a34a; color: #86efac; }
+.opcion-res.normal { background: #111; color: #666; }
+.tip-box {
+  background: #111; border: 1px solid #2a2a2a; border-radius: .4rem;
+  padding: .75rem; margin-top: .5rem; font-size: .8rem; color: #bbb; line-height: 1.6;
+}
+</style>
+
+<div class="row justify-content-center">
+<div class="col-lg-8">
+
+<!-- Resultado header -->
+<div class="card-cs p-4 text-center mb-4">
+  {% if tipo == 'zona_master' %}
+    {% if aprobado %}
+      <div style="font-size:3.5rem">🏅</div>
+      <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡ZONA DOMINADA!</h2>
+      <p class="text-cs-muted">Respondiste {{ total_unicas }} pregunta{{ total_unicas|pluralize:"s" }} difícil{{ total_unicas|pluralize:"es" }} correctamente 3 veces seguidas. ¡Sin un solo error!</p>
+    {% else %}
+      <div style="font-size:3.5rem">💀</div>
+      <h2 class="fw-bold mt-2" style="color:var(--cs-danger)">EXAMEN FALLIDO</h2>
+      {% if pregunta_fallida %}
+      <p class="text-cs-muted">Fallaste en la pregunta <strong style="color:var(--cs-red)">#{{ pregunta_fallida.numero }}</strong>. Se requiere 100% — sin un solo error.</p>
+      <div style="background:#1a0000;border:1px solid #7f1d1d;border-radius:.5rem;padding:.85rem 1rem;margin-top:.75rem;text-align:left;font-size:.85rem">
+        <strong style="color:#fca5a5">#{{ pregunta_fallida.numero }}:</strong>
+        <span style="color:#ccc"> {{ pregunta_fallida.enunciado|truncatechars:120 }}</span>
+      </div>
+      {% else %}
+      <p class="text-cs-muted">Cometiste al menos un error. Se requiere 100% para dominar la zona.</p>
+      {% endif %}
+    {% endif %}
+  {% elif aprobado %}
+    <div style="font-size:3.5rem">🏆</div>
+    <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡APROBADO!</h2>
+    <p class="text-cs-muted">Cumpliste el mínimo requerido para la certificación CCFA</p>
   {% else %}
-  <div style="font-size:4rem">📋</div>
-  <h2 class="fw-bold mt-2" style="color:var(--cs-danger)">No aprobado</h2>
-  <p class="text-cs-muted">Necesitas {{ pass_score }} correctas. ¡Sigue practicando!</p>
+    <div style="font-size:3.5rem">📋</div>
+    <h2 class="fw-bold mt-2" style="color:var(--cs-danger)">No aprobado</h2>
+    <p class="text-cs-muted">Necesitas {{ pass_score }} correctas. ¡Sigue practicando!</p>
   {% endif %}
 
-  <!-- Marcador -->
-  <div class="row g-3 my-4">
+  <div class="row g-3 my-3">
     <div class="col-4">
       <div class="card-cs p-3" style="border-color:var(--cs-green)">
         <div class="fw-bold" style="font-size:2rem;color:var(--cs-green)">{{ correctas }}</div>
@@ -30,14 +70,14 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="card-cs p-3" style="border-color:var(--cs-red)">
+      <div class="card-cs p-3">
         <div class="fw-bold" style="font-size:2rem;color:var(--cs-red)">{{ porcentaje }}%</div>
         <small class="text-cs-muted">Puntaje</small>
       </div>
     </div>
   </div>
 
-  <!-- Barra de puntaje -->
+  <!-- Score bar -->
   <div class="mb-4">
     <div class="d-flex justify-content-between mb-1">
       <small class="text-cs-muted">0</small>
@@ -45,22 +85,69 @@
       <small class="text-cs-muted">{{ total }}</small>
     </div>
     <div style="background:#1E3A5F;border-radius:4px;height:14px;position:relative">
-      <!-- Línea de mínimo -->
       <div style="position:absolute;left:{% widthratio pass_score total 100 %}%;top:-4px;bottom:-4px;width:2px;background:#F5821E"></div>
-      <!-- Barra de puntaje -->
       <div style="width:{% widthratio correctas total 100 %}%;height:100%;border-radius:4px;
            background:{% if aprobado %}var(--cs-green){% else %}var(--cs-danger){% endif %}"></div>
     </div>
     <div class="text-cs-muted mt-1" style="font-size:.75rem">La línea naranja indica el mínimo para aprobar</div>
   </div>
 
-  <div class="d-grid gap-2">
-    <a href="/examen/iniciar/" class="btn-cs-primary text-decoration-none py-2">Repetir Examen</a>
-    <a href="/"                class="btn-cs-outline text-decoration-none py-2">Volver al Menú</a>
-    <a href="/progreso/"       class="btn-cs-outline text-decoration-none py-2">Ver mi Progreso</a>
+  <div class="d-flex gap-2 justify-content-center flex-wrap">
+    {% if tipo == 'zona_master' %}
+    <a href="/examen/zona/" class="btn-cs-primary text-decoration-none">Repetir Zona</a>
+    {% elif tipo == 'inteligente' %}
+    <a href="/examen/inteligente/" class="btn-cs-primary text-decoration-none">Repetir Simulación</a>
+    {% elif tipo == 'repaso' %}
+    <a href="/repaso/" class="btn-cs-primary text-decoration-none">Repetir Repaso</a>
+    {% elif tipo == 'ineditas' %}
+    <a href="/examen/ineditas/" class="btn-cs-primary text-decoration-none">Más Inéditas</a>
+    {% else %}
+    <a href="/examen/iniciar/" class="btn-cs-primary text-decoration-none">Repetir Examen</a>
+    {% endif %}
+    <a href="/" class="btn-cs-outline text-decoration-none">Menú Principal</a>
+    <a href="/progreso/" class="btn-cs-outline text-decoration-none">Ver Progreso</a>
   </div>
-
 </div>
+
+<!-- Desglose de respuestas -->
+{% if resultados %}
+<div class="card-cs p-4">
+  <h6 class="fw-bold mb-1">Desglose de Respuestas</h6>
+  <p class="text-cs-muted small mb-3">Verde = correcto · Rojo = tu respuesta incorrecta · Celeste = respuesta correcta revelada</p>
+
+  {% for r in resultados %}
+  <div class="result-item">
+    <div class="d-flex align-items-start gap-2 mb-2">
+      <span style="font-size:.9rem">{% if r.es_correcto %}✅{% else %}❌{% endif %}</span>
+      <div style="flex:1">
+        {% if r.pregunta.categoria != 'General' %}
+        <span class="badge-cat me-1">{{ r.pregunta.categoria }}</span>
+        {% endif %}
+        <span class="small text-cs-muted">#{{ r.pregunta.numero }}</span>
+        <p class="mb-2 mt-1" style="font-size:.88rem;line-height:1.5">{{ r.pregunta.enunciado }}</p>
+
+        {% for op in r.pregunta.opciones %}
+          {% if op == r.respuesta_dada_norm %}
+            <span class="opcion-res {% if r.es_correcto %}elegida-ok{% else %}elegida-mal{% endif %}">
+              {{ op }} {% if r.es_correcto %}✓{% else %}✗ (tu respuesta){% endif %}
+            </span>
+          {% elif not r.es_correcto and op == r.correcta_norm %}
+            <span class="opcion-res correcta-reveal">{{ op }} ← Correcta</span>
+          {% else %}
+            <span class="opcion-res normal">{{ op }}</span>
+          {% endif %}
+        {% endfor %}
+
+        {% if not r.es_correcto and r.tip %}
+        <div class="tip-box">{{ r.tip|safe }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
 </div>
 </div>
 {% endblock %}

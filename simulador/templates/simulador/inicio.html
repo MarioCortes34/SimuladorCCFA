@@ -3,12 +3,11 @@
 {% block content %}
 
 <style>
-.hero { text-align:center; padding: 3rem 0 2rem; }
+.hero { text-align:center; padding: 2.5rem 0 1.5rem; }
 .hero-title { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
 .hero-sub { color: var(--cs-muted); font-size: .95rem; margin-top: .75rem; letter-spacing: 1px; text-transform: uppercase; }
 
-/* Stat pills */
-.stats-row { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; }
+.stats-row { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
 .stat-pill {
   background: #111; border: 1px solid #2a2a2a; border-radius: 999px;
   padding: .5rem 1.25rem; display: flex; align-items: center; gap: .6rem;
@@ -16,62 +15,196 @@
 .stat-pill .num { font-size: 1.1rem; font-weight: 800; color: var(--cs-red); }
 .stat-pill .lbl { font-size: .75rem; color: var(--cs-muted); text-transform: uppercase; letter-spacing: .5px; }
 
-/* Acción principal */
 .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
 @media(max-width:600px){ .action-grid { grid-template-columns: 1fr; } }
+.action-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem; }
+@media(max-width:700px){ .action-grid-3 { grid-template-columns: 1fr; } }
 
 .action-card {
   background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: .75rem;
   padding: 1.5rem; text-decoration: none; color: inherit;
-  transition: border-color .2s, transform .15s; cursor: pointer;
-  display: block;
+  transition: border-color .2s, transform .15s; cursor: pointer; display: block;
 }
 .action-card:hover { border-color: var(--cs-red); transform: translateY(-2px); color: inherit; }
 .action-card.primary { border-color: #3a0000; background: #0d0000; }
 .action-card.primary:hover { border-color: var(--cs-red); background: #150000; }
+.action-card.smart { border-color: #1a1000; background: #0d0900; }
+.action-card.smart:hover { border-color: #F5821E; background: #150c00; }
+.action-card.repaso { border-color: #002200; background: #000d00; }
+.action-card.repaso:hover { border-color: var(--cs-green); background: #001200; }
 
 .action-card .icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
 .action-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .25rem; }
 .action-card p  { font-size: .8rem; color: var(--cs-muted); margin: 0; line-height: 1.4; }
 .action-card .tag {
-  display: inline-block; margin-top: .75rem; background: var(--cs-red);
+  display: inline-block; margin-top: .75rem;
   color: #fff; font-size: .7rem; font-weight: 700; padding: .2rem .6rem;
   border-radius: 4px; letter-spacing: .5px;
 }
+.tag-red    { background: var(--cs-red); }
+.tag-orange { background: #b45309; }
+.tag-green  { background: #15803d; }
+.tag-gray   { background: #222; color: #aaa !important; }
 
-/* Módulos del examen */
 .section-title { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cs-muted); margin: 2rem 0 .75rem; }
 .modules-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: .75rem; }
-.module-card {
-  background: #0f0f0f; border: 1px solid #222; border-radius: .6rem;
-  padding: 1rem; transition: border-color .2s; cursor: default;
-}
-.module-card:hover { border-color: #444; }
+.module-card { background: #0f0f0f; border: 1px solid #222; border-radius: .6rem; padding: 1rem; }
 .module-card .m-icon { font-size: 1.5rem; margin-bottom: .5rem; }
 .module-card .m-name { font-size: .78rem; font-weight: 700; color: #ccc; line-height: 1.3; }
 .module-card .m-desc { font-size: .7rem; color: var(--cs-muted); margin-top: .25rem; line-height: 1.4; }
 
-/* Progreso bar */
 .prog-wrap { background: #111; border: 1px solid #222; border-radius: .75rem; padding: 1.25rem; margin-top: 1rem; }
 .prog-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: .6rem; }
 .prog-row h6 { margin: 0; font-size: .85rem; font-weight: 700; }
 .prog-row a { font-size: .75rem; color: var(--cs-red); text-decoration: none; }
 .progress-cs { background: #222; height: 6px; border-radius: 3px; overflow: hidden; }
 .progress-cs .bar { background: var(--cs-red); border-radius: 3px; height: 100%; transition: width .5s ease; }
-.prog-stats { display: flex; gap: 1.5rem; margin-top: .75rem; }
+.prog-stats { display: flex; gap: 1.5rem; margin-top: .75rem; flex-wrap: wrap; }
 .prog-stats span { font-size: .75rem; color: var(--cs-muted); }
 .prog-stats strong { color: var(--cs-white); }
 
-/* Estudio por categoría */
 .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .6rem; }
 .cat-btn {
   background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: .5rem;
   padding: .65rem 1rem; color: var(--cs-white); text-decoration: none;
-  font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: .5rem;
-  transition: all .15s;
+  font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: .5rem; transition: all .15s;
 }
 .cat-btn:hover { border-color: var(--cs-red); color: var(--cs-white); background: #150000; }
 .cat-btn .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cs-red); flex-shrink: 0; }
+
+/* ── Mis Victorias / Cobertura ── */
+.cob-details { margin-top: 1rem; }
+.cob-summary {
+  list-style: none; cursor: pointer;
+  background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: .6rem;
+  padding: .85rem 1.25rem; display: flex; align-items: center; gap: .75rem;
+  font-size: .85rem; font-weight: 700; color: var(--cs-white);
+  transition: border-color .15s;
+}
+.cob-summary::-webkit-details-marker { display: none; }
+.cob-summary::before { content: '▶'; font-size: .65rem; color: var(--cs-red); transition: transform .2s; }
+details[open] .cob-summary::before { transform: rotate(90deg); }
+.cob-summary:hover { border-color: var(--cs-red); }
+.cob-chips { display: flex; gap: .5rem; flex-wrap: wrap; margin-left: auto; }
+.cob-chip {
+  font-size: .68rem; font-weight: 700; padding: .18rem .55rem;
+  border-radius: 999px; white-space: nowrap;
+}
+.cob-chip-g { background: #052e16; color: #86efac; border: 1px solid #16a34a; }
+.cob-chip-b { background: #1a0000; color: #fca5a5; border: 1px solid #EC0000; }
+.cob-chip-o { background: #1c0d00; color: #fed7aa; border: 1px solid #78350f; }
+.cob-chip-n { background: #111; color: #888; border: 1px solid #333; }
+
+.cob-body { padding: 1rem 0 0; }
+.cob-grid {
+  display: flex; flex-wrap: wrap; gap: .35rem; padding: .75rem 1rem;
+  background: #0a0a0a; border: 1px solid #1a1a1a;
+  border-top: none; border-radius: 0 0 .6rem .6rem;
+  max-height: 320px; overflow-y: auto;
+}
+.cob-pill {
+  position: relative; font-size: .72rem; font-weight: 700;
+  padding: .22rem .55rem; border-radius: 4px; cursor: help;
+  border: 1px solid transparent; white-space: nowrap;
+  transition: transform .1s;
+}
+.cob-pill:hover { transform: scale(1.08); z-index: 10; }
+.cob-pill-ok  { background: #052e16; color: #86efac; border-color: #166534; }
+.cob-pill-ok0 { background: #0a1a0a; color: #4ade80; border-color: #166534; }
+.cob-pill-mal { background: #1a0000; color: #f87171; border-color: #7f1d1d; }
+.cob-pill-neu { background: #111; color: #888; border-color: #2a2a2a; }
+
+/* Tooltip puro CSS */
+.cob-pill::after {
+  content: attr(data-tip);
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 5px); left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a; border: 1px solid #444;
+  border-radius: .35rem; padding: .4rem .7rem;
+  font-size: .7rem; font-weight: 400; white-space: nowrap; color: #e5e7eb;
+  pointer-events: none; z-index: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,.6);
+}
+.cob-pill:hover::after { display: block; }
+
+/* Inestables */
+.inest-item {
+  display:flex; align-items:center; gap:.75rem; padding:.55rem 1rem;
+  border-bottom:1px solid #1a1a1a; background:#0a0a0a;
+}
+.inest-item:last-child{border-bottom:none;}
+.inest-num{font-weight:800;color:#F5821E;font-size:.85rem;flex-shrink:0;}
+.inest-text{font-size:.78rem;color:#ccc;flex:1;min-width:0;}
+.inest-badge{font-size:.68rem;font-weight:700;padding:.2rem .5rem;border-radius:4px;background:#2a1500;color:#F5821E;white-space:nowrap;}
+
+/* Ladrones de Tiempo — hover popup */
+.ladrón-wrap{position:relative;display:inline-block;}
+.ladrón-btn{
+  background:#0d1117;border:1px solid #1e3a5f;color:#93c5fd;
+  font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:.4rem;
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.ladrón-btn:hover{border-color:#3b82f6;background:#0d1b35;}
+.ladrón-popup{
+  display:none;position:absolute;left:0;top:calc(100% + 6px);
+  z-index:300;width:540px;max-width:90vw;
+  background:#111;border:1px solid #333;border-radius:.5rem;
+  max-height:380px;overflow-y:auto;
+  box-shadow:0 8px 32px rgba(0,0,0,.7);
+}
+.ladrón-wrap:hover .ladrón-popup,.ladrón-wrap.open .ladrón-popup{display:block;}
+.ladrón-head{padding:.65rem 1rem;border-bottom:1px solid #222;font-size:.75rem;font-weight:700;color:#93c5fd;letter-spacing:.5px;}
+.ladrón-row{
+  display:flex;align-items:center;gap:.6rem;padding:.55rem 1rem;
+  border-bottom:1px solid #1a1a1a;
+}
+.ladrón-row:last-child{border-bottom:none;}
+.ladrón-row:hover{background:#161616;}
+.ladrón-pos{font-size:.7rem;color:#555;width:18px;flex-shrink:0;text-align:right;}
+.ladrón-num{font-weight:800;color:var(--cs-red);font-size:.82rem;flex-shrink:0;}
+.ladrón-q{font-size:.76rem;color:#ccc;flex:1;min-width:0;line-height:1.3;}
+.ladrón-t{font-size:.72rem;font-weight:700;padding:.18rem .45rem;border-radius:3px;background:#1a1a2e;color:#93c5fd;flex-shrink:0;}
+
+/* Dashboard de Zonas */
+.zona-section { margin-bottom: 1.5rem; }
+.zona-header {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .65rem 1rem; border-radius: .5rem .5rem 0 0;
+  font-size: .82rem; font-weight: 700; letter-spacing: .5px;
+}
+.zona-peligro-hdr { background: #2d0000; border: 1px solid #7f1d1d; color: #fca5a5; }
+.zona-critica-hdr { background: #1c0d00; border: 1px solid #78350f; color: #fed7aa; }
+.zona-alerta-hdr  { background: #0d1b0d; border: 1px solid #166534; color: #86efac; }
+
+.zona-list {
+  border: 1px solid #2a2a2a; border-top: none; border-radius: 0 0 .5rem .5rem;
+  overflow: hidden;
+}
+.zona-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .6rem 1rem; border-bottom: 1px solid #1a1a1a;
+  background: #0a0a0a; gap: .75rem; flex-wrap: wrap;
+}
+.zona-item:last-child { border-bottom: none; }
+.zona-item:hover { background: #111; }
+.zona-num { font-weight: 800; color: var(--cs-red); font-size: .85rem; flex-shrink: 0; }
+.zona-text { font-size: .78rem; color: #ccc; line-height: 1.3; flex: 1; min-width: 0; }
+.zona-meta { display: flex; align-items: center; gap: .6rem; flex-shrink: 0; }
+.zona-badge {
+  font-size: .68rem; font-weight: 700; padding: .2rem .5rem;
+  border-radius: 4px; white-space: nowrap; letter-spacing: .3px;
+}
+.zona-time { background: #1a1a2e; color: #93c5fd; }
+.zona-err  { background: #1a0000; color: #fca5a5; }
+.zona-btn {
+  font-size: .7rem; font-weight: 700; padding: .25rem .65rem;
+  border-radius: 4px; background: var(--cs-red); color: #fff;
+  text-decoration: none; white-space: nowrap; transition: opacity .15s;
+}
+.zona-btn:hover { opacity: .8; color: #fff; }
+.zona-empty { padding: .65rem 1rem; font-size: .78rem; color: var(--cs-muted); background: #0a0a0a; }
 </style>
 
 <!-- Hero -->
@@ -85,22 +218,63 @@
     <div class="stat-pill"><span class="num">60</span><span class="lbl">Por examen</span></div>
     <div class="stat-pill"><span class="num">75%</span><span class="lbl">Para aprobar</span></div>
     <div class="stat-pill"><span class="num">{{ dominadas }}</span><span class="lbl">Dominadas</span></div>
+    {% if fallidas %}<div class="stat-pill"><span class="num" style="color:#F5821E">{{ fallidas }}</span><span class="lbl">Para repasar</span></div>{% endif %}
   </div>
 </div>
 
-<!-- Acciones principales -->
-<div class="action-grid">
+<!-- Modos de Examen -->
+<p class="section-title">Modos de Examen</p>
+<div class="action-grid-3">
   <a href="/examen/iniciar/" class="action-card primary">
     <span class="icon">🎯</span>
-    <h3>Examen Simulado</h3>
-    <p>60 preguntas al azar · Condiciones reales de certificación</p>
-    <span class="tag">INICIAR →</span>
+    <h3>Examen Aleatorio</h3>
+    <p>60 preguntas al azar · 60 min · Condiciones reales</p>
+    <span class="tag tag-red">INICIAR →</span>
   </a>
+  <a href="/examen/inteligente/" class="action-card smart">
+    <span class="icon">🧠</span>
+    <h3>Simulación Inteligente</h3>
+    <p>Prioriza tus fallas · Oculta lo que ya dominas · 60 min</p>
+    <span class="tag tag-orange">SMART →</span>
+  </a>
+  <a href="/repaso/" class="action-card repaso">
+    <span class="icon">🔥</span>
+    <h3>Repaso Extremo</h3>
+    <p>Solo tus preguntas fallidas · Presión real · Sin tiempo</p>
+    <span class="tag tag-green">{% if fallidas %}{{ fallidas }} preguntas{% else %}SIN FALLAS{% endif %}</span>
+  </a>
+</div>
+<div class="action-grid" style="margin-top:.75rem">
+  <a href="/examen/ineditas/" class="action-card" style="border-color:#1e1b4b;background:#0d0c1a">
+    <span class="icon">🆕</span>
+    <h3>Preguntas Inéditas</h3>
+    <p>Solo preguntas que <strong>nunca has visto</strong> · {{ sin_ver_count }} disponibles para {{ tenant.nombre|capfirst }}</p>
+    <span class="tag" style="background:#3730a3">{% if sin_ver_count %}{{ sin_ver_count }} sin ver →{% else %}¡Todo visto!{% endif %}</span>
+  </a>
+  {% if total_zona %}
+  <a href="/examen/zona/" class="action-card" style="border-color:#3a0000;background:#0d0000">
+    <span class="icon">⚔️</span>
+    <h3>Examen Zona Crítica</h3>
+    <p>{{ total_zona }} preguntas difíciles · Cada una 3 veces · 100% requerido · Un error = reprueba</p>
+    <span class="tag tag-red">DOMINAR →</span>
+  </a>
+  {% endif %}
+</div>
+
+<!-- Modos de Estudio -->
+<p class="section-title">Modo Estudio (feedback inmediato)</p>
+<div class="action-grid">
   <a href="/quiz/?modo=aleatorio&reiniciar=1" class="action-card">
     <span class="icon">📚</span>
-    <h3>Modo Estudio</h3>
+    <h3>Estudio Libre</h3>
     <p>Sin presión · Revisa la respuesta correcta en cada pregunta</p>
-    <span class="tag" style="background:#222;color:#aaa">ESTUDIAR →</span>
+    <span class="tag tag-gray">ESTUDIAR →</span>
+  </a>
+  <a href="/quiz/?modo=repaso&reiniciar=1" class="action-card repaso" style="{% if not fallidas %}opacity:.5;pointer-events:none{% endif %}">
+    <span class="icon">⚠️</span>
+    <h3>Repasar Fallidas</h3>
+    <p>Solo preguntas donde cometiste errores · Con feedback inmediato</p>
+    <span class="tag tag-green">{% if fallidas %}{{ fallidas }} pendientes{% else %}Sin fallas aún{% endif %}</span>
   </a>
 </div>
 
@@ -130,7 +304,7 @@
 <!-- Barra de progreso -->
 <div class="prog-wrap">
   <div class="prog-row">
-    <h6>Tu Progreso Global</h6>
+    <h6>Progreso de {{ tenant.nombre|capfirst }}</h6>
     <a href="/progreso/">Ver detalle →</a>
   </div>
   <div class="progress-cs">
@@ -138,9 +312,172 @@
   </div>
   <div class="prog-stats">
     <span><strong>{{ dominadas }}</strong> dominadas</span>
-    <span><strong>{{ total|add:"-"|add:dominadas|stringformat:"d" }}</strong> pendientes</span>
+    <span><strong>{{ fallidas }}</strong> para repasar</span>
+    <span><strong>{{ sin_ver_count }}</strong> sin ver</span>
     <span><strong>{{ total }}</strong> total</span>
   </div>
 </div>
+
+<!-- Preguntas Inestables -->
+{% if inestables %}
+<p class="section-title" style="margin-top:2rem">⚠️ Preguntas Inestables — Antes dominadas, ahora fallando</p>
+<div style="border:1px solid #78350f;border-radius:.5rem;overflow:hidden;margin-bottom:1rem">
+  <div style="background:#1c0d00;padding:.6rem 1rem;font-size:.8rem;font-weight:700;color:#fed7aa;border-bottom:1px solid #78350f">
+    🔶 Estas preguntas las tenías dominadas pero volviste a fallarlas — son tu mayor riesgo
+    <span style="margin-left:auto;float:right;font-weight:400;opacity:.8">({{ inestables|length }} pregunta{{ inestables|length|pluralize:"s" }})</span>
+  </div>
+  {% for item in inestables %}
+  <div class="inest-item">
+    <span class="inest-num">#{{ item.pregunta.numero }}</span>
+    <span class="inest-text">{{ item.pregunta.enunciado|truncatechars:90 }}</span>
+    <span class="inest-badge">racha: {{ item.racha }}</span>
+    <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn" style="margin-left:.5rem">Practicar</a>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Dashboard de Zonas de Dificultad -->
+{% if zona_peligro or zona_critica or zona_alerta or inestables %}
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:.75rem">
+  <p class="section-title" style="margin:0">⚡ Zonas de Dificultad por Tiempo y Errores</p>
+  {% if ladrones %}
+  <div class="ladrón-wrap" id="ladronWrap">
+    <button class="ladrón-btn" onclick="document.getElementById('ladronWrap').classList.toggle('open')">
+      ⏳ Ladrones de Tiempo ({{ ladrones|length }})
+    </button>
+    <div class="ladrón-popup">
+      <div class="ladrón-head">Preguntas ordenadas por tiempo promedio — de mayor a menor</div>
+      {% for item in ladrones %}
+      <div class="ladrón-row">
+        <span class="ladrón-pos">{{ forloop.counter }}</span>
+        <span class="ladrón-num">#{{ item.pregunta.numero }}</span>
+        <span class="ladrón-q">{{ item.pregunta.enunciado|truncatechars:70 }}</span>
+        <span class="ladrón-t">{{ item.t_prom }}s</span>
+        <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn" style="font-size:.65rem;padding:.2rem .5rem">ir</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+{% if zona_peligro %}
+<div class="zona-section">
+  <div class="zona-header zona-peligro-hdr">
+    🔴 Zona de Peligro Extremo — Más de 3 minutos promedio
+    <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_peligro|length }} pregunta{{ zona_peligro|length|pluralize:"s" }})</span>
+  </div>
+  <div class="zona-list">
+    {% for item in zona_peligro %}
+    <div class="zona-item">
+      <span class="zona-num">#{{ item.pregunta.numero }}</span>
+      <span class="zona-text">{{ item.pregunta.enunciado|truncatechars:90 }}</span>
+      <div class="zona-meta">
+        <span class="zona-badge zona-time">⏱ {{ item.t_prom }}s prom.</span>
+        <span class="zona-badge zona-err">✗ {{ item.tasa_error }}% error</span>
+        <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn">Practicar</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if zona_critica %}
+<div class="zona-section">
+  <div class="zona-header zona-critica-hdr">
+    🟠 Zona Crítica — Siempre fallas o tardas más de 1:30 min
+    <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_critica|length }} pregunta{{ zona_critica|length|pluralize:"s" }})</span>
+  </div>
+  <div class="zona-list">
+    {% for item in zona_critica %}
+    <div class="zona-item">
+      <span class="zona-num">#{{ item.pregunta.numero }}</span>
+      <span class="zona-text">{{ item.pregunta.enunciado|truncatechars:90 }}</span>
+      <div class="zona-meta">
+        <span class="zona-badge zona-time">⏱ {{ item.t_prom }}s prom.</span>
+        <span class="zona-badge zona-err">✗ {{ item.tasa_error }}% error</span>
+        <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn">Practicar</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% if zona_alerta %}
+<div class="zona-section">
+  <div class="zona-header zona-alerta-hdr">
+    🟡 Zona de Alerta — Entre 1 y 3 minutos (misclick o duda)
+    <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_alerta|length }} pregunta{{ zona_alerta|length|pluralize:"s" }})</span>
+  </div>
+  <div class="zona-list">
+    {% for item in zona_alerta %}
+    <div class="zona-item">
+      <span class="zona-num">#{{ item.pregunta.numero }}</span>
+      <span class="zona-text">{{ item.pregunta.enunciado|truncatechars:90 }}</span>
+      <div class="zona-meta">
+        <span class="zona-badge zona-time">⏱ {{ item.t_prom }}s prom.</span>
+        <span class="zona-badge zona-err">✗ {{ item.tasa_error }}% error</span>
+        <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn">Practicar</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% else %}
+<p class="section-title" style="margin-top:2rem">⚡ Dashboard de Dificultad</p>
+<div style="background:#0a0a0a;border:1px solid #2a2a2a;border-radius:.5rem;padding:1.25rem;text-align:center;color:var(--cs-muted);font-size:.85rem">
+  Completa algunos exámenes o sesiones de estudio para ver tu análisis de zonas críticas por tiempo y errores.
+</div>
+{% endif %}
+
+{% if cobertura %}
+<!-- ── Mis Victorias / Cobertura Total ───────────────────────────── -->
+<details class="cob-details">
+  <summary class="cob-summary">
+    📊 Mis Victorias — Cobertura Total de {{ tenant.nombre|capfirst }}
+    <div class="cob-chips">
+      <span class="cob-chip cob-chip-g">✓ {{ cob_dominadas }} dominadas</span>
+      {% if cob_solo_ok %}<span class="cob-chip cob-chip-o">~ {{ cob_solo_ok }} sin fallas</span>{% endif %}
+      {% if cob_con_fallas %}<span class="cob-chip cob-chip-b">✗ {{ cob_con_fallas }} con fallas</span>{% endif %}
+      <span class="cob-chip cob-chip-n">{{ cobertura|length }} de {{ total }} vistas</span>
+    </div>
+  </summary>
+
+  <div class="cob-grid">
+    {% for c in cobertura %}
+      {% if c.racha_limpia %}
+        <span class="cob-pill cob-pill-ok"
+              data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
+              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+          #{{ c.pregunta.numero }} ✓
+        </span>
+      {% elif c.solo_buenas %}
+        <span class="cob-pill cob-pill-ok0"
+              data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
+              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+          #{{ c.pregunta.numero }}
+        </span>
+      {% elif c.malas > 0 %}
+        <span class="cob-pill cob-pill-mal"
+              data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
+              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+          #{{ c.pregunta.numero }}
+        </span>
+      {% else %}
+        <span class="cob-pill cob-pill-neu"
+              data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
+              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+          #{{ c.pregunta.numero }}
+        </span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</details>
+{% endif %}
 
 {% endblock %}

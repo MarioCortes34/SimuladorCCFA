@@ -1,0 +1,16 @@
+{% extends "simulador/base.html" %}
+{% block title %}Sin Preguntas Inéditas{% endblock %}
+{% block content %}
+<div class="card-cs p-5 text-center">
+  <div style="font-size:3rem">🎯</div>
+  <h3 class="mt-3 fw-bold">¡Sin preguntas inéditas!</h3>
+  <p class="text-cs-muted mt-2">
+    {{ tenant.nombre|capfirst }} ya ha visto todas las preguntas al menos una vez.<br>
+    Usa la Simulación Inteligente para repasar con mayor enfoque.
+  </p>
+  <div class="d-flex gap-2 justify-content-center mt-4 flex-wrap">
+    <a href="/examen/inteligente/" class="btn-cs-primary text-decoration-none">Simulación Inteligente</a>
+    <a href="/" class="btn-cs-outline text-decoration-none">Menú Principal</a>
+  </div>
+</div>
+{% endblock %}

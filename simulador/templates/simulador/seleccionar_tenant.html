@@ -1,0 +1,63 @@
+{% extends "simulador/base.html" %}
+{% block title %}Seleccionar Perfil — CCFA{% endblock %}
+{% block content %}
+<style>
+.tenant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; max-width: 600px; margin: 2rem auto; }
+.tenant-card {
+  background: #0f0f0f; border: 2px solid #2a2a2a; border-radius: 1rem;
+  padding: 2rem 1.5rem; text-align: center; cursor: pointer;
+  transition: all .2s; position: relative;
+}
+.tenant-card:hover { border-color: var(--cs-red); transform: translateY(-3px); }
+.tenant-card.activo { border-color: var(--cs-red); background: #0d0000; }
+.tenant-card .big-avatar {
+  width: 64px; height: 64px; border-radius: 50%; background: var(--cs-red);
+  color: #fff; font-size: 1.6rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem; text-transform: uppercase;
+}
+.tenant-card .t-name { font-size: 1.1rem; font-weight: 700; text-transform: capitalize; }
+.tenant-card .t-sub  { font-size: .78rem; color: var(--cs-muted); margin-top: .25rem; }
+.activo-badge {
+  position: absolute; top: .75rem; right: .75rem;
+  background: var(--cs-red); color: #fff; font-size: .65rem;
+  font-weight: 700; padding: .15rem .5rem; border-radius: 999px;
+  letter-spacing: .5px; text-transform: uppercase;
+}
+</style>
+
+<div class="text-center mb-4">
+  <p style="color:var(--cs-red);font-size:.7rem;letter-spacing:3px;font-weight:700;text-transform:uppercase">Perfiles</p>
+  <h2 class="fw-bold">¿Quién estudia ahora?</h2>
+  <p class="text-cs-muted" style="font-size:.88rem">Cada perfil tiene su propio historial y progreso independiente.</p>
+</div>
+
+<form method="POST" action="/tenant/" id="form-tenant">
+  {% csrf_token %}
+  <input type="hidden" name="tenant_id" id="tenant-id-input" value="">
+  <div class="tenant-grid">
+    {% for t in tenants %}
+    <div class="tenant-card {% if t.id == tenant_actual.id %}activo{% endif %}"
+         onclick="elegir({{ t.id }})">
+      {% if t.id == tenant_actual.id %}<span class="activo-badge">Activo</span>{% endif %}
+      <div class="big-avatar">{{ t.nombre|slice:":1" }}</div>
+      <div class="t-name">{{ t.nombre }}</div>
+      <div class="t-sub">Perfil de estudio</div>
+    </div>
+    {% endfor %}
+  </div>
+</form>
+
+<div class="text-center mt-3">
+  <a href="/" class="text-cs-muted small text-decoration-none">← Volver al inicio</a>
+</div>
+
+{% block scripts %}
+<script>
+function elegir(id) {
+  document.getElementById('tenant-id-input').value = id;
+  document.getElementById('form-tenant').submit();
+}
+</script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "simulador/base.html" %}
+{% block title %}Repaso Extremo — CCFA{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+<div class="col-lg-5">
+<div class="card-cs p-5 text-center">
+  <div style="font-size:3.5rem">🌟</div>
+  <h3 class="fw-bold mt-3" style="color:var(--cs-green)">¡Sin fallas registradas!</h3>
+  <p class="text-cs-muted mt-2" style="font-size:.9rem">
+    {{ tenant.nombre|capfirst }}, aún no tienes preguntas fallidas registradas.<br>
+    Practica primero con el modo Estudio o el Examen para que el sistema identifique tus puntos débiles.
+  </p>
+  <div class="d-grid gap-2 mt-4">
+    <a href="/examen/iniciar/" class="btn-cs-primary text-decoration-none py-2">Hacer un Examen ahora</a>
+    <a href="/quiz/" class="btn-cs-outline text-decoration-none py-2">Modo Estudio</a>
+    <a href="/" class="btn-cs-outline text-decoration-none py-2">Volver al Menú</a>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

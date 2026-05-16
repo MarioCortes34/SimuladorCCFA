@@ -14,7 +14,7 @@
   <p class="text-cs-muted small mb-2">#{{ pregunta.numero }}</p>
   <h5 class="mb-4" style="line-height:1.6">{{ pregunta.enunciado }}</h5>
   <div id="opciones">
-    {% for op in pregunta.opciones %}
+    {% for op in opciones_display %}
     <button class="opcion-btn" data-opcion="{{ op }}">{{ op }}</button>
     {% endfor %}
   </div>
@@ -49,16 +49,18 @@ const CSRF = "{{ csrf_token }}";
 const PID  = "{{ pregunta.pk }}";
 const MODO = "{{ modo }}";
 let respondido = false;
+const questionStartTime = Date.now();
 
 document.querySelectorAll('.opcion-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     if (respondido) return;
     respondido = true;
     const resp = this.dataset.opcion;
+    const tiempoSegundos = Math.round((Date.now() - questionStartTime) / 1000);
     fetch("/verificar/", {
       method:'POST',
       headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRFToken':CSRF},
-      body: new URLSearchParams({pregunta_id:PID, respuesta:resp, modo:MODO}),
+      body: new URLSearchParams({pregunta_id:PID, respuesta:resp, modo:MODO, tiempo_empleado:tiempoSegundos}),
     })
     .then(r => r.json())
     .then(data => {
@@ -71,12 +73,13 @@ document.querySelectorAll('.opcion-btn').forEach(btn => {
         if (b.dataset.opcion === resp) b.classList.add(data.correcto ? 'ok' : 'mal');
         if (!data.correcto && letraBtn === letraCorrecta) b.classList.add('rev');
       });
+      const textoSinLetra = t => (t || '').replace(/^\s*[A-Da-d][.):\s]+/, '').trim();
       const p = document.getElementById('panel');
       p.style.display = 'block';
       p.style.background = data.correcto ? '#052e16' : '#1a0000';
       p.style.border = '1px solid ' + (data.correcto ? '#16a34a' : '#EC0000');
-      p.innerHTML = `<strong style="font-size:1rem">${data.correcto ? '✓ Correct!' : '✗ Incorrect'}</strong><br>
-        <span style="font-size:.88rem;color:#ccc">Answer: ${data.respuesta_correcta}</span>`;
+      p.innerHTML = `<strong style="font-size:1rem">${data.correcto ? '✓ Correcto!' : '✗ Incorrecto'}</strong><br>
+        <span style="font-size:.88rem;color:#ccc">Respuesta: <strong>${textoSinLetra(data.respuesta_correcta)}</strong></span>`;
 
       // Tip en español
       if (data.tip) {

@@ -1,112 +1,337 @@
 {% extends "simulador/base.html" %}
-{% block title %}Examen CCFA – Pregunta {{ numero }}{% endblock %}
+{% block title %}Examen CCFA – Pregunta {{ numero }}/{{ total }}{% endblock %}
 {% block content %}
 
-<!-- Header del examen -->
-<div class="d-flex justify-content-between align-items-center mb-2">
-  <span class="text-cs-muted small">Pregunta <strong class="text-cs-red">{{ numero }}</strong> de {{ total }}</span>
-  <span class="text-cs-muted small">✓ {{ correctas }} correctas</span>
+<style>
+.exam-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: .75rem; flex-wrap: wrap; gap: .5rem;
+}
+.timer-wrap {
+  display: flex; align-items: center; gap: .5rem;
+  background: #111; border: 1px solid #2a2a2a; border-radius: 999px;
+  padding: .35rem .9rem;
+}
+.timer-clock {
+  font-size: 1rem; font-weight: 800; font-variant-numeric: tabular-nums;
+  color: var(--cs-white); letter-spacing: 1px;
+}
+.timer-clock.urgent { color: var(--cs-red); animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+
+.score-wrap { display: flex; align-items: center; gap: .5rem; }
+.score-nums { font-size: .88rem; font-weight: 700; }
+.btn-toggle {
+  background: none; border: 1px solid #333; color: #666;
+  border-radius: 4px; padding: .2rem .45rem; font-size: .75rem;
+  cursor: pointer; line-height: 1; transition: all .15s;
+}
+.btn-toggle:hover { border-color: #555; color: #aaa; }
+
+.exam-meta { font-size: .82rem; color: var(--cs-muted); }
+
+/* Options */
+.opcion-btn {
+  display: block; width: 100%; text-align: left; background: #1a1a1a;
+  border: 2px solid #2a2a2a; color: #F8F8F8; padding: .85rem 1.1rem;
+  border-radius: .5rem; margin-bottom: .5rem; cursor: pointer;
+  transition: all .15s; font-size: .92rem;
+}
+.opcion-btn:hover:not(:disabled) { border-color: #555; background: #222; }
+.opcion-btn.selected  { border-color: #3b82f6; background: #0d1b35; color: #93c5fd; }
+.opcion-btn.ok        { background: #052e16; border-color: #16a34a; color: #86efac; }
+.opcion-btn.mal       { background: #1a0000; border-color: #EC0000; color: #fca5a5; }
+.opcion-btn.rev       { background: #111827; border-color: #6b7280; color: #d1d5db; }
+.opcion-btn:disabled  { cursor: default; }
+
+/* Feedback panel */
+#feedback-panel { margin-top: .85rem; }
+#feedback-box {
+  padding: .9rem 1rem; border-radius: .5rem; border: 1px solid #333;
+  font-size: .95rem;
+}
+.fb-ok  { background: #052e16 !important; border-color: #16a34a !important; }
+.fb-mal { background: #1a0000 !important; border-color: #EC0000 !important; }
+#tip-box {
+  margin-top: .6rem; padding: .85rem 1rem;
+  background: #111; border: 1px solid #2a2a2a; border-radius: .5rem;
+}
+#tip-box p { font-size: .7rem; font-weight: 700; letter-spacing: 1px; color: #888; text-transform: uppercase; margin: 0 0 .4rem; }
+#tip-contenido { font-size: .83rem; line-height: 1.65; color: #ccc; }
+
+/* Nav buttons */
+.nav-exam { display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; gap: .75rem; }
+.btn-back {
+  background: transparent; border: 1px solid #2a2a2a; color: var(--cs-muted);
+  padding: .65rem 1.25rem; border-radius: .5rem; cursor: pointer;
+  font-size: .88rem; transition: all .15s;
+}
+.btn-back:hover { border-color: #555; color: var(--cs-white); }
+.btn-next, .btn-continuar {
+  background: var(--cs-red); border: none; color: #fff;
+  font-weight: 700; padding: .7rem 2rem; border-radius: .5rem;
+  cursor: pointer; font-size: .92rem; letter-spacing: .5px; transition: opacity .15s;
+}
+.btn-next:hover:not(:disabled), .btn-continuar:hover { opacity: .85; }
+.btn-next:disabled { opacity: .35; cursor: not-allowed; }
+.btn-continuar { background: #1d4ed8; }
+</style>
+
+<!-- Header -->
+<div class="exam-header">
+  <span class="exam-meta">Pregunta <strong class="text-cs-red">{{ numero }}</strong> de {{ total }}</span>
+
+  <div class="timer-wrap">
+    <span>⏱</span>
+    <span class="timer-clock" id="timer">--:--</span>
+  </div>
+
+  <div class="score-wrap">
+    <span class="score-nums" id="score-display">
+      <span style="color:var(--cs-green)">✓ <span id="score-ok">{{ correctas }}</span></span>
+      &nbsp;
+      <span style="color:var(--cs-danger)">✗ <span id="score-fail">{{ incorrectas }}</span></span>
+    </span>
+    <button class="btn-toggle" id="btn-toggle-score" onclick="toggleScore()" title="Mostrar / ocultar puntaje">👁</button>
+  </div>
 </div>
-<div class="progress-cs mb-4">
+
+<!-- Progress bar -->
+<div class="progress-cs mb-3">
   <div class="bar" style="width:{{ progreso }}%"></div>
 </div>
 
-<!-- Categoría -->
 {% if pregunta.categoria != 'General' %}
 <div class="mb-3"><span class="badge-cat">{{ pregunta.categoria }}</span></div>
 {% endif %}
 
-<!-- Pregunta -->
-<div class="card-cs p-4 mb-3">
+<!-- Question card -->
+<div class="card-cs p-4 mb-1">
   <p class="text-cs-muted small mb-2">#{{ pregunta.numero }}</p>
-  <h5 class="mb-4" style="line-height:1.6">{{ pregunta.enunciado }}</h5>
+  <h5 class="mb-4" style="line-height:1.65">{{ pregunta.enunciado }}</h5>
 
   <div id="opciones">
-    {% for op in pregunta.opciones %}
-    <button class="opcion-btn" data-opcion="{{ op }}">{{ op }}</button>
+    {% for op in opciones_display %}
+    <button type="button" class="opcion-btn" data-opcion="{{ op }}">{{ op }}</button>
     {% endfor %}
   </div>
 
-  <div id="panel" style="display:none;margin-top:1rem;padding:1rem;border-radius:.5rem;"></div>
-  <div id="panel-tip" style="display:none;margin-top:.75rem;padding:1rem;border-radius:.5rem;background:#111;border:1px solid #2a2a2a;">
-    <p style="font-size:.72rem;font-weight:700;letter-spacing:1px;color:#888;text-transform:uppercase;margin:0 0 .5rem">💬 Feedback en Español</p>
-    <div id="tip-contenido" style="font-size:.85rem;line-height:1.6;color:#ccc"></div>
+  <!-- Feedback (se muestra tras Next) -->
+  <div id="feedback-panel" style="display:none">
+    <div id="feedback-box"></div>
+    <div id="tip-box" style="display:none">
+      <p>💬 Feedback en Español</p>
+      <div id="tip-contenido"></div>
+    </div>
+  </div>
+
+  <!-- Form solo para Back y finalizar-por-timer -->
+  <form id="form-exam" method="POST" action="{% url 'examen_navegar' %}" style="display:none">
+    {% csrf_token %}
+    <input type="hidden" name="pregunta_id" value="{{ pregunta.pk }}">
+    <input type="hidden" name="respuesta"   id="input-respuesta" value="">
+    <input type="hidden" name="action"      id="input-action"    value="back">
+  </form>
+
+  <div class="nav-exam" id="nav-wrap">
+    <div>
+      {% if puede_retroceder %}
+      <button type="button" class="btn-back" id="btn-back" onclick="navBack()">← Anterior</button>
+      {% endif %}
+    </div>
+    <div style="display:flex;gap:.75rem;align-items:center">
+      <button type="button" id="btn-next"
+              class="btn-next"
+              {% if not respuesta_previa %}disabled{% endif %}>
+        {% if es_ultima %}Finalizar Examen 🏁{% else %}Siguiente →{% endif %}
+      </button>
+      <button type="button" id="btn-continuar"
+              class="btn-continuar" style="display:none">
+        {% if es_ultima %}Ver Resultados 🏁{% else %}Continuar →{% endif %}
+      </button>
+    </div>
   </div>
 </div>
 
-<!-- Siguiente -->
-<div id="wrap-sig" style="display:none; text-align:right">
-  {% if numero < total %}
-  <button id="btn-sig" class="btn-cs-primary">Siguiente →</button>
-  {% else %}
-  <button id="btn-sig" class="btn-cs-primary">Ver Resultado 🏁</button>
-  {% endif %}
-</div>
-
-<style>
-.opcion-btn {
-  display:block; width:100%; text-align:left; background:#1a1a1a;
-  border:2px solid #2a2a2a; color:#F8F8F8; padding:.75rem 1rem;
-  border-radius:.5rem; margin-bottom:.5rem; cursor:pointer; transition:all .15s;
-  font-size:.92rem;
-}
-.opcion-btn:hover:not(:disabled) { border-color:#EC0000; background:#222; }
-.opcion-btn.ok  { background:#052e16; border-color:#16a34a; color:#86efac; }
-.opcion-btn.mal { background:#1a0000; border-color:#EC0000; color:#fca5a5; }
-.opcion-btn.rev { background:#111827; border-color:#6b7280; color:#d1d5db; }
-</style>
-{% endblock %}
-
 {% block scripts %}
 <script>
-const CSRF = "{{ csrf_token }}";
-const PID  = "{{ pregunta.pk }}";
-let respondido = false;
+const CSRF        = "{{ csrf_token }}";
+const PID         = "{{ pregunta.pk }}";
+const ES_ULTIMA   = {{ es_ultima|yesno:"true,false" }};
+let remaining     = {{ remaining }};
+let selectedOption = "{{ respuesta_previa|escapejs }}";
+let feedbackMostrado = false;
+const questionStartTime = Date.now();
 
+// ── Pre-select respuesta previa ──────────────────────────────
+if (selectedOption) {
+  document.querySelectorAll('.opcion-btn').forEach(btn => {
+    if (btn.dataset.opcion === selectedOption) btn.classList.add('selected');
+  });
+}
+
+// ── Seleccionar opción ───────────────────────────────────────
 document.querySelectorAll('.opcion-btn').forEach(btn => {
   btn.addEventListener('click', function() {
-    if (respondido) return;
-    respondido = true;
-    const resp = this.dataset.opcion;
-
-    fetch("/examen/verificar/", {
-      method: 'POST',
-      headers: {'Content-Type':'application/x-www-form-urlencoded','X-CSRFToken':CSRF},
-      body: new URLSearchParams({pregunta_id: PID, respuesta: resp}),
-    })
-    .then(r => r.json())
-    .then(data => {
-      const letra = t => { const m = t.trim().match(/^([A-Da-d])[.):]?\s/); return m ? m[1].toUpperCase() : t.trim(); };
-      const letraCorrecta = letra(data.respuesta_correcta);
-      document.querySelectorAll('.opcion-btn').forEach(b => {
-        b.disabled = true;
-        const letraBtn = letra(b.dataset.opcion);
-        if (b.dataset.opcion === resp) b.classList.add(data.correcto ? 'ok' : 'mal');
-        if (!data.correcto && letraBtn === letraCorrecta) b.classList.add('rev');
-      });
-
-      const panel = document.getElementById('panel');
-      panel.style.display = 'block';
-      panel.style.background = data.correcto ? '#052e16' : '#1a0000';
-      panel.style.border = '1px solid ' + (data.correcto ? '#16a34a' : '#EC0000');
-      panel.innerHTML = `<strong style="font-size:1rem">${data.correcto ? '✓ Correct!' : '✗ Incorrect'}</strong><br>
-        <span style="font-size:.88rem;color:#ccc">Answer: ${data.respuesta_correcta}</span>`;
-
-      if (data.tip) {
-        const t = document.getElementById('panel-tip');
-        document.getElementById('tip-contenido').innerHTML = data.tip;
-        t.style.display = 'block';
-      }
-
-      document.getElementById('wrap-sig').style.display = 'block';
-
-      if (data.terminado) {
-        document.getElementById('btn-sig').onclick = () => window.location = '/examen/resultado/';
-      } else {
-        document.getElementById('btn-sig').onclick = () => window.location = '/examen/pregunta/';
-      }
-    });
+    if (feedbackMostrado) return;
+    document.querySelectorAll('.opcion-btn').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    selectedOption = this.dataset.opcion;
+    document.getElementById('btn-next').disabled = false;
   });
 });
+
+// ── Siguiente (AJAX) ─────────────────────────────────────────
+document.getElementById('btn-next').addEventListener('click', function() {
+  if (!selectedOption || feedbackMostrado) return;
+  this.disabled = true;
+
+  const tiempoSegundos = Math.round((Date.now() - questionStartTime) / 1000);
+  fetch("{% url 'examen_navegar' %}", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+    body: new URLSearchParams({
+      csrfmiddlewaretoken: CSRF,
+      pregunta_id:     PID,
+      respuesta:       selectedOption,
+      action:          'next',
+      tiempo_empleado: tiempoSegundos,
+    }),
+  })
+  .then(r => r.json())
+  .then(data => {
+    feedbackMostrado = true;
+    mostrarFeedback(data);
+    actualizarScore(data.correctas, data.incorrectas);
+
+    const btnC = document.getElementById('btn-continuar');
+    btnC.style.display = 'inline-block';
+    if (data.fallido) {
+      btnC.textContent = '💀 Ver resultado del fallo';
+      btnC.style.background = '#7f1d1d';
+      btnC.onclick = () => window.location = '/examen/resultado/';
+    } else if (ES_ULTIMA || data.terminado) {
+      btnC.textContent = 'Ver Resultados 🏁';
+      btnC.onclick = () => window.location = '/examen/resultado/';
+    } else {
+      btnC.textContent = 'Continuar →';
+      btnC.onclick = () => window.location = '/examen/pregunta/';
+    }
+
+    if (document.getElementById('btn-back'))
+      document.getElementById('btn-back').disabled = true;
+  })
+  .catch(() => { this.disabled = false; });
+});
+
+// ── Mostrar feedback ─────────────────────────────────────────
+function extraerLetra(texto) {
+  const m = (texto || '').trim().match(/^([A-Da-d])[.):]?\s/);
+  return m ? m[1].toUpperCase() : (texto || '').trim();
+}
+
+function mostrarFeedback(data) {
+  const panel = document.getElementById('feedback-panel');
+  const box   = document.getElementById('feedback-box');
+  panel.style.display = 'block';
+
+  // Colorear opciones
+  const letraCorrecta = extraerLetra(data.respuesta_correcta);
+  document.querySelectorAll('.opcion-btn').forEach(btn => {
+    btn.disabled = true;
+    btn.classList.remove('selected');
+    const letraBtn = extraerLetra(btn.dataset.opcion);
+    if (btn.dataset.opcion === selectedOption) {
+      btn.classList.add(data.es_correcto ? 'ok' : 'mal');
+    }
+    if (!data.es_correcto && letraBtn === letraCorrecta) {
+      btn.classList.add('rev');
+    }
+  });
+
+  // Texto de la opción correcta sin la letra (para evitar conflicto con explicaciones del DB)
+  const textoSinLetra = t => (t || '').replace(/^\s*[A-Da-d][.):\s]+/, '').trim();
+
+  if (data.es_correcto) {
+    box.className = 'fb-ok';
+    box.innerHTML = '<strong style="color:#86efac;font-size:1.05rem">✓ ¡Correcto!</strong>';
+    if (data.tip) {
+      document.getElementById('tip-contenido').innerHTML = data.tip;
+      document.getElementById('tip-box').style.display = 'block';
+    }
+  } else {
+    box.className = 'fb-mal';
+    box.innerHTML = `
+      <strong style="color:#fca5a5;font-size:1.05rem">✗ Incorrecto</strong><br>
+      <span style="font-size:.87rem;color:#ccc;display:block;margin-top:.35rem">
+        Respuesta correcta: <strong style="color:#86efac">${textoSinLetra(data.respuesta_correcta)}</strong>
+      </span>`;
+    if (data.tip) {
+      document.getElementById('tip-contenido').innerHTML = data.tip;
+      document.getElementById('tip-box').style.display = 'block';
+    }
+  }
+}
+
+// ── Actualizar marcador ───────────────────────────────────────
+function actualizarScore(ok, fail) {
+  document.getElementById('score-ok').textContent   = ok;
+  document.getElementById('score-fail').textContent = fail;
+}
+
+// ── Toggle score (👁) ─────────────────────────────────────────
+function toggleScore() {
+  const el  = document.getElementById('score-display');
+  const btn = document.getElementById('btn-toggle-score');
+  const oculto = el.style.visibility === 'hidden';
+  el.style.visibility = oculto ? 'visible' : 'hidden';
+  btn.textContent = oculto ? '👁' : '🙈';
+  localStorage.setItem('exam_score_visible', oculto ? '1' : '0');
+}
+(function initToggle() {
+  if (localStorage.getItem('exam_score_visible') === '0') {
+    document.getElementById('score-display').style.visibility = 'hidden';
+    document.getElementById('btn-toggle-score').textContent = '🙈';
+  }
+})();
+
+// ── Back (form POST) ─────────────────────────────────────────
+function navBack() {
+  document.getElementById('input-respuesta').value = selectedOption || '';
+  document.getElementById('input-action').value    = 'back';
+  document.getElementById('form-exam').submit();
+}
+
+// ── Timer ────────────────────────────────────────────────────
+const timerEl = document.getElementById('timer');
+function fmtTime(s) {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  if (h > 0) return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+  return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+}
+function tick() {
+  if (remaining <= 0) {
+    timerEl.textContent = '00:00';
+    timerEl.classList.add('urgent');
+    // Auto-submit por tiempo
+    document.getElementById('input-respuesta').value = selectedOption || '';
+    document.getElementById('input-action').value    = 'finalizar';
+    document.getElementById('form-exam').style.display = 'block';
+    document.getElementById('form-exam').submit();
+    return;
+  }
+  timerEl.textContent = fmtTime(remaining);
+  if (remaining <= 300) timerEl.classList.add('urgent');
+  else timerEl.classList.remove('urgent');
+  remaining--;
+}
+tick();
+setInterval(tick, 1000);
 </script>
+{% endblock %}
 {% endblock %}

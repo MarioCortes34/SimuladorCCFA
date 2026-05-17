@@ -14,6 +14,50 @@ EXAM_TOTAL = 60
 EXAM_MINUTOS = 60
 TENANTS_DEFAULT = ['alexander', 'mario']
 
+TOPICS = {
+    'policy-application': {
+        'nombre': 'Policy Application', 'icon': '📋', 'color': '#EC0000', 'max_errores': 3,
+        'keywords': ['prevention polic', 'sensor update polic', 'default polic', 'update polic',
+                     'polic assign', 'assign polic', 'prevention settings', 'policy group'],
+    },
+    'host-management': {
+        'nombre': 'Host Management', 'icon': '🖥️', 'color': '#EC0000', 'max_errores': 2,
+        'keywords': ['rfm', 'reduced functionality', 'host management', 'hostname',
+                     'inactive sensor', 'host filter', 'host search', 'disable detection',
+                     'deactivat', 'hidden detection'],
+    },
+    'rules-configuration': {
+        'nombre': 'Rules Configuration', 'icon': '🔍', 'color': '#EC0000', 'max_errores': 2,
+        'keywords': ['ioa', 'ioc', 'indicator of attack', 'indicator of compromise',
+                     'exclusion', 'ml exclusion', 'machine learning exclusion',
+                     'sensor visibility exclusion', 'custom ioc', 'hash'],
+    },
+    'dashboards': {
+        'nombre': 'Dashboards & Reports', 'icon': '📊', 'color': '#F5821E', 'max_errores': 1,
+        'keywords': ['audit log', 'dashboard', 'widget', 'retent',
+                     '90 day', '365 day', 'activity app', 'notification', 'report'],
+    },
+    'user-management': {
+        'nombre': 'User Management', 'icon': '🔐', 'color': '#F5821E', 'max_errores': 1,
+        'keywords': ['rbac', 'role', 'permission', 'falcon administrator',
+                     'falcon analyst', 'read-only', 'user management', 'user role'],
+    },
+    'sensor-deployment': {
+        'nombre': 'Sensor Deployment', 'icon': '📡', 'color': '#F5821E', 'max_errores': 1,
+        'keywords': ['cid', 'customer id', 'install', 'deploy', 'sensor version',
+                     'troubleshoot', 'agent id', 'sensor tag', 'download sensor'],
+    },
+    'group-creation': {
+        'nombre': 'Group Creation', 'icon': '👥', 'color': '#16a34a', 'max_errores': 1,
+        'keywords': ['host group', 'static group', 'dynamic group',
+                     'group creation', 'group assign', 'create group'],
+    },
+    'workflows-soar': {
+        'nombre': 'Workflows SOAR', 'icon': '⚡', 'color': '#16a34a', 'max_errores': 1,
+        'keywords': ['falcon fusion', 'soar', 'workflow', 'trigger', 'automation', 'fusion'],
+    },
+}
+
 _tenants_ok = False
 
 
@@ -218,6 +262,16 @@ def _seleccionar_ponderado(tenant, k):
     return result
 
 
+def _preguntas_por_topico(slug):
+    t = TOPICS.get(slug)
+    if not t:
+        return Pregunta.objects.none()
+    q = Q()
+    for kw in t['keywords']:
+        q |= Q(enunciado__icontains=kw)
+    return Pregunta.objects.filter(q)
+
+
 # ─────────────────────────────────────────────
 # Selector de Tenant
 # ─────────────────────────────────────────────
@@ -339,13 +393,32 @@ def inicio(request):
     cob_solo_ok    = sum(1 for c in cobertura if c['solo_buenas'] and not c['racha_limpia'])
     cob_con_fallas = sum(1 for c in cobertura if c['malas'] > 0)
 
-    cobertura_json = json.dumps([{
+    cobertura_data = [{
         'pk':       c['pregunta'].pk,
         'numero':   c['pregunta'].numero,
         'enunciado': c['pregunta'].enunciado,
         'opciones': c['pregunta'].opciones,
         'correcta': c['pregunta'].respuesta_correcta,
-    } for c in cobertura])
+    } for c in cobertura]
+
+    # ── Per-topic stats ───────────────────────────────────────────────
+    topic_stats = []
+    for slug, info in TOPICS.items():
+        pids = set(_preguntas_por_topico(slug).values_list('id', flat=True))
+        n_total = len(pids)
+        n_dominadas = sum(1 for pid in pids if progreso_map.get(pid) and progreso_map[pid].dominada)
+        n_fallidas  = sum(1 for pid in pids if progreso_map.get(pid) and progreso_map[pid].fallida)
+        topic_stats.append({
+            'slug':        slug,
+            'nombre':      info['nombre'],
+            'icon':        info['icon'],
+            'color':       info['color'],
+            'max_errores': info['max_errores'],
+            'total':       n_total,
+            'dominadas':   n_dominadas,
+            'fallidas':    n_fallidas,
+            'pct':         int(n_dominadas / n_total * 100) if n_total else 0,
+        })
 
     return render(request, 'simulador/inicio.html', {
         'total':          total,
@@ -364,7 +437,8 @@ def inicio(request):
         'cob_dominadas':  cob_dominadas,
         'cob_solo_ok':    cob_solo_ok,
         'cob_con_fallas': cob_con_fallas,
-        'cobertura_json': cobertura_json,
+        'cobertura_data': cobertura_data,
+        'topic_stats':    topic_stats,
     })
 
 
@@ -506,6 +580,68 @@ def examen_zona_iniciar(request):
     return redirect('examen_pregunta')
 
 
+def examen_zona_repaso_iniciar(request, zona):
+    """Repaso de zona: examen normal con todas las preguntas de esa zona."""
+    tenant = _get_tenant(request)
+    stats_qs = (HistorialRespuesta.objects
+                .filter(tenant=tenant)
+                .values('pregunta_id')
+                .annotate(
+                    total_intentos=Count('id'),
+                    correctas_count=Count('id', filter=Q(resultado='Correcto')),
+                    t_prom=Avg('tiempo_empleado')
+                ))
+    zona_ids = []
+    for stat in stats_qs:
+        t_prom = int(stat['t_prom'] or 0)
+        n = stat['total_intentos']
+        tasa_error = round((1 - stat['correctas_count'] / n) * 100) if n else 0
+        if zona == 'peligro' and t_prom > 180:
+            zona_ids.append(stat['pregunta_id'])
+        elif zona == 'critica' and (tasa_error >= 50 or t_prom > 90):
+            zona_ids.append(stat['pregunta_id'])
+        elif zona == 'alerta' and 60 <= t_prom <= 180:
+            zona_ids.append(stat['pregunta_id'])
+    if not zona_ids:
+        return redirect('inicio')
+    random.shuffle(zona_ids)
+    request.session['exam'] = {
+        'preguntas': zona_ids,
+        'index': 0,
+        'respuestas': {},
+        'resultados_parcial': {},
+        'terminado': False,
+        'inicio_ts': int(time.time()),
+        'tipo': 'repaso',
+        'zona_origen': zona,
+    }
+    return redirect('examen_pregunta')
+
+
+def examen_topico_iniciar(request, topic_slug):
+    t = TOPICS.get(topic_slug)
+    if not t:
+        return redirect('inicio')
+    ids = list(_preguntas_por_topico(topic_slug).values_list('id', flat=True))
+    if not ids:
+        return redirect('inicio')
+    random.shuffle(ids)
+    request.session['exam'] = {
+        'preguntas': ids,
+        'index': 0,
+        'respuestas': {},
+        'resultados_parcial': {},
+        'terminado': False,
+        'inicio_ts': int(time.time()),
+        'tipo': 'topico',
+        'topic_slug': topic_slug,
+        'topic_nombre': t['nombre'],
+        'max_errores': t['max_errores'],
+        'fallido': False,
+    }
+    return redirect('examen_pregunta')
+
+
 def examen_pregunta(request):
     exam = request.session.get('exam')
     if not exam:
@@ -566,6 +702,8 @@ def examen_pregunta(request):
         'tipo': exam.get('tipo', 'normal'),
         'correctas': correctas_parcial,
         'incorrectas': incorrectas_parcial,
+        'max_errores': exam.get('max_errores'),
+        'topic_nombre': exam.get('topic_nombre', ''),
     })
 
 
@@ -653,6 +791,15 @@ def examen_navegar(request):
         exam['terminado'] = True
         exam['pregunta_fallida_id'] = str(pregunta_id)
         fallido = True
+
+    # ── Tópico: fallo si se supera el límite de errores ───────────
+    if not fallido and exam.get('tipo') == 'topico' and not es_correcto:
+        max_err = exam.get('max_errores', 1)
+        incorrectas_count = sum(1 for v in exam.get('resultados_parcial', {}).values() if not v)
+        if incorrectas_count > max_err:
+            exam['fallido'] = True
+            exam['terminado'] = True
+            fallido = True
 
     if not fallido:
         exam['index'] += 1
@@ -770,8 +917,13 @@ def examen_resultado(request):
 
     if tipo == 'zona_master':
         aprobado = not fallido_zona and incorrectas == 0
+    elif tipo == 'topico':
+        aprobado = not fallido_zona
     else:
         aprobado = correctas >= PASS_SCORE
+
+    topic_nombre = exam.get('topic_nombre', '')
+    max_errores  = exam.get('max_errores')
 
     request.session.pop('exam', None)
 
@@ -788,6 +940,8 @@ def examen_resultado(request):
         'fallido_zona': fallido_zona,
         'pregunta_fallida': pregunta_fallida,
         'tenant': tenant,
+        'topic_nombre': topic_nombre,
+        'max_errores': max_errores,
     })
 
 

@@ -46,6 +46,16 @@
       <p class="text-cs-muted">Cometiste al menos un error. Se requiere 100% para dominar la zona.</p>
       {% endif %}
     {% endif %}
+  {% elif tipo == 'topico' %}
+    {% if aprobado %}
+      <div style="font-size:3.5rem">🎯</div>
+      <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡TÓPICO DOMINADO!</h2>
+      <p class="text-cs-muted">Completaste <strong>{{ topic_nombre }}</strong> dentro del límite de {{ max_errores }} error{{ max_errores|pluralize:"es" }} permitido{{ max_errores|pluralize:"s" }}.</p>
+    {% else %}
+      <div style="font-size:3.5rem">❌</div>
+      <h2 class="fw-bold mt-2" style="color:var(--cs-danger)">LÍMITE SUPERADO</h2>
+      <p class="text-cs-muted">Superaste el máximo de <strong>{{ max_errores }}</strong> error{{ max_errores|pluralize:"es" }} en <strong>{{ topic_nombre }}</strong>. ¡Vuelve a intentarlo!</p>
+    {% endif %}
   {% elif aprobado %}
     <div style="font-size:3.5rem">🏆</div>
     <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡APROBADO!</h2>

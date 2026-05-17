@@ -1,0 +1,4691 @@
+[
+{
+  "model": "simulador.progresopregunta",
+  "pk": 1,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 126,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 2,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 44,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 3,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 182,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 4,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 80,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 5,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 190,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 6,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 124,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 7,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 192,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 8,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 3,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 10,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 179,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 12,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 174,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 13,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 203,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 14,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 28,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 15,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 184,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 17,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 193,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 18,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 233,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 19,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 161,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 20,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 46,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 21,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 169,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 22,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 145,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 23,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 217,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 24,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 21,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 25,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 117,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 26,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 134,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 27,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 228,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 28,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 224,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 29,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 239,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 30,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 87,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 31,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 135,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 32,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 66,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 33,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 218,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 34,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 60,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 35,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 246,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 36,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 245,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 37,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 226,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 38,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 238,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 39,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 70,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 40,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 10,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 41,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 138,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 42,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 213,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 43,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 214,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 44,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 91,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 45,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 121,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 47,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 58,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 48,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 144,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 49,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 227,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 50,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 141,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 51,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 94,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 52,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 198,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 53,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 114,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 54,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 26,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 55,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 97,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 56,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 93,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 57,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 237,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 58,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 57,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 59,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 166,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 61,
+  "fields": {
+    "tenant": null,
+    "session_key": "emlt9iyd0mj5rz8vb46ju4wavbekuahp",
+    "pregunta": 11,
+    "veces_vista": 1,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 62,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 225,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 63,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 153,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 64,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 32,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 65,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 94,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 66,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 230,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 67,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 86,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 68,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 186,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 69,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 36,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 70,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 73,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 71,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 9,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 72,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 241,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 73,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 99,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 74,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 195,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 75,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 189,
+    "veces_vista": 5,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 76,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 124,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 77,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 232,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 78,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 204,
+    "veces_vista": 5,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 79,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 59,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 80,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 78,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 81,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 119,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 82,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 42,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 83,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 191,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 84,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 11,
+    "veces_vista": 5,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 85,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 177,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 86,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 37,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 87,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 171,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 88,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 174,
+    "veces_vista": 5,
+    "veces_correcta": 4,
+    "racha_correcta": 4,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 89,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 205,
+    "veces_vista": 6,
+    "veces_correcta": 5,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 90,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 2,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 91,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 231,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 92,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 84,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 93,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 223,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 94,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 62,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 95,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 180,
+    "veces_vista": 5,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 96,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 246,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 97,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 227,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 98,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 244,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 99,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 4,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 100,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 43,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 101,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 5,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 102,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 1,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 103,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 19,
+    "veces_vista": 6,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 104,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 134,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 105,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 163,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 106,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 91,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 107,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 192,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 108,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 209,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 109,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 54,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 110,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 147,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 111,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 115,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 112,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 179,
+    "veces_vista": 3,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 113,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 152,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 114,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 202,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 115,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 173,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 116,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 60,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 117,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 158,
+    "veces_vista": 4,
+    "veces_correcta": 4,
+    "racha_correcta": 4,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 118,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 41,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 119,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 24,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 120,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 6,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 121,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 65,
+    "veces_vista": 6,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 122,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 80,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 123,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 178,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 124,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 126,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 125,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 35,
+    "veces_vista": 7,
+    "veces_correcta": 4,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 126,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 248,
+    "veces_vista": 5,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 127,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 38,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 128,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 243,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 129,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 44,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 130,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 210,
+    "veces_vista": 5,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 131,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 53,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 132,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 208,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 133,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 182,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 134,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 26,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 135,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 201,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 136,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 212,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 137,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 87,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 138,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 151,
+    "veces_vista": 5,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 139,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 39,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 140,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 235,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 141,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 164,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 142,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 57,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 143,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 236,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 144,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 127,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 145,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 131,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 146,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 247,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 147,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 120,
+    "veces_vista": 4,
+    "veces_correcta": 4,
+    "racha_correcta": 4,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 148,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 12,
+    "veces_vista": 5,
+    "veces_correcta": 3,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 149,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 162,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 150,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 75,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 151,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 125,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 152,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 50,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 153,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 116,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 154,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 237,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 155,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 51,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 156,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 233,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 157,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 76,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 158,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 184,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 159,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 161,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 160,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 176,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 161,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 55,
+    "veces_vista": 4,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 162,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 123,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 163,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 181,
+    "veces_vista": 3,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 164,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 138,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 165,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 113,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 166,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 88,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 167,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 242,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 168,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 28,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 169,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 33,
+    "veces_vista": 4,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 170,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 139,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 171,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 185,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 172,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 137,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 173,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 71,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 174,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 117,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 175,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 226,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 176,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 105,
+    "veces_vista": 4,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 177,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 143,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 178,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 22,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 179,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 106,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 180,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 110,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 181,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 193,
+    "veces_vista": 5,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 182,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 74,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 183,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 92,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 184,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 175,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 185,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 146,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 186,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 46,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 187,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 150,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 188,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 114,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 189,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 23,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 190,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 229,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 191,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 215,
+    "veces_vista": 4,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 192,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 169,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 193,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 58,
+    "veces_vista": 4,
+    "veces_correcta": 2,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 194,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 14,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 195,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 132,
+    "veces_vista": 3,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 196,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 27,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 197,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 77,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 198,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 200,
+    "veces_vista": 3,
+    "veces_correcta": 3,
+    "racha_correcta": 3,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 199,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 64,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 200,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 103,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 201,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 240,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 202,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 222,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 203,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 145,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 204,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 8,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 205,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 16,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 206,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 47,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 207,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 61,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 208,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 10,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 209,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 48,
+    "veces_vista": 3,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 210,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 129,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 211,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 136,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 212,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 30,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 213,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 89,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 214,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 170,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 215,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 17,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 216,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 72,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 217,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 21,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 218,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 140,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 219,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 187,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 220,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 45,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 221,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 216,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 222,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 211,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 223,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 52,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 224,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 98,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 225,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 102,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 226,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 159,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 227,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 167,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 228,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 3,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 229,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 221,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 230,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 142,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 231,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 81,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 232,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 122,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 233,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 154,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 234,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 95,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 235,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 245,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 236,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 83,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 237,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 85,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 238,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 218,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 239,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 67,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 240,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 166,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 241,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 18,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 242,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 13,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 243,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 107,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 244,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 157,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 245,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 29,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 246,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 15,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 247,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 20,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 248,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 219,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 249,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 188,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 250,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 207,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 251,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 118,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 252,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 183,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 253,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 31,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 254,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 96,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 255,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 234,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 256,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 66,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 257,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 93,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 258,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 100,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 259,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 97,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 260,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 112,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 261,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 104,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 262,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 220,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 263,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 224,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 264,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 239,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 265,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 111,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 266,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 144,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 267,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 121,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 268,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 196,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 269,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 217,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 270,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 63,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 271,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 214,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 272,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 160,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 273,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 197,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 274,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 34,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 275,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 213,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 276,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 135,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 277,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 7,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 278,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 165,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 279,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 155,
+    "veces_vista": 3,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 280,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 130,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 281,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 168,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 282,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 49,
+    "veces_vista": 3,
+    "veces_correcta": 1,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 283,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 109,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 284,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 141,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 285,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 206,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 286,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 82,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 287,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 25,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 288,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 203,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 289,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 40,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 290,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 70,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 291,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 228,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 292,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 108,
+    "veces_vista": 2,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 293,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 149,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 294,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 68,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 295,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 190,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 296,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 56,
+    "veces_vista": 2,
+    "veces_correcta": 0,
+    "racha_correcta": 0,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 297,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 198,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 298,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 199,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 299,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 194,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 300,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 101,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 301,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 90,
+    "veces_vista": 2,
+    "veces_correcta": 2,
+    "racha_correcta": 2,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 302,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 172,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 303,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 69,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 304,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 156,
+    "veces_vista": 5,
+    "veces_correcta": 5,
+    "racha_correcta": 5,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 305,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 79,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 306,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 133,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 307,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 238,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 308,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 148,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.progresopregunta",
+  "pk": 309,
+  "fields": {
+    "tenant": 2,
+    "session_key": "",
+    "pregunta": 128,
+    "veces_vista": 1,
+    "veces_correcta": 1,
+    "racha_correcta": 1,
+    "alguna_vez_dominada": false
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 1,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 213,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.519Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 2,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 118,
+    "tiempo_empleado": 12,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.533Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 3,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 175,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.545Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 4,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 244,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.559Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 5,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 178,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.572Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 6,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 83,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.589Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 7,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 15,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.602Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 8,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 183,
+    "tiempo_empleado": 22,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.616Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 9,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 104,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.630Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 10,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 157,
+    "tiempo_empleado": 31,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.643Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 11,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 139,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.660Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 12,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 237,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.673Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 13,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 186,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.692Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 14,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 4,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.711Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 15,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 158,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.725Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 16,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 23,
+    "tiempo_empleado": 3,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.737Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 17,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 19,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.751Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 18,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 171,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.769Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 19,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 235,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.782Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 20,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 190,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.796Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 21,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 155,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.809Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 22,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 119,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.822Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 23,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 95,
+    "tiempo_empleado": 10,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.838Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 24,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 48,
+    "tiempo_empleado": 1,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:24.851Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 25,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 167,
+    "tiempo_empleado": 7,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.865Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 26,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 200,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.878Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 27,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 195,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.891Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 28,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 49,
+    "tiempo_empleado": 15,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:24.907Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 29,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 123,
+    "tiempo_empleado": 31,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.920Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 30,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 220,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.934Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 31,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 182,
+    "tiempo_empleado": 10,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.947Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 32,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 93,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.960Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 33,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 90,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.974Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 34,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 31,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.988Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 35,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 174,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.002Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 36,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 15,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.015Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 37,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 129,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.029Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 38,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 20,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.044Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 39,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 177,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.057Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 40,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 186,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.069Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 41,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 147,
+    "tiempo_empleado": 7,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.083Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 42,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 1,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.097Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 43,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 180,
+    "tiempo_empleado": 28,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.111Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 44,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 100,
+    "tiempo_empleado": 57,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.125Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 45,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 142,
+    "tiempo_empleado": 2,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.139Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 46,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 154,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.152Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 47,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 210,
+    "tiempo_empleado": 19,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.167Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 48,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 169,
+    "tiempo_empleado": 3,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.182Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 49,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 212,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.195Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 50,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 94,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.209Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 51,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 193,
+    "tiempo_empleado": 17,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.223Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 52,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 81,
+    "tiempo_empleado": 27,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.236Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 53,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 92,
+    "tiempo_empleado": 14,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.261Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 54,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 225,
+    "tiempo_empleado": 14,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.275Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 55,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 86,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.289Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 56,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 26,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.302Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 57,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 120,
+    "tiempo_empleado": 27,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.316Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 58,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 61,
+    "tiempo_empleado": 21,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.334Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 59,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 80,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.349Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 60,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 219,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.362Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 61,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:36:24.453Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 62,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 42,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:37:23.806Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 63,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 1,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:37:48.912Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 64,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 9,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:12.767Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 65,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:29.809Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 66,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:54.174Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 67,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:39:06.501Z"
+  }
+}
+]

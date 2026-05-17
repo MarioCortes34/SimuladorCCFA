@@ -283,57 +283,28 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   {% endfor %}
 </div>
 
-<!-- Módulos del examen (tópicos reales del examen CCFA) -->
-<p class="section-title">Tópicos del Examen CCFA</p>
+<!-- Tópicos del examen CCFA — interactivos -->
+<p class="section-title">Tópicos del Examen CCFA — click para iniciar examen focalizado</p>
 <div class="modules-grid">
-  <div class="module-card" style="border-left:3px solid #EC0000">
-    <div class="m-icon">📋</div>
-    <div class="m-name">Policy Application</div>
-    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGHEST · ~45 preguntas</div>
-    <div class="m-desc">Prevention policies, Sensor Update, Default policies, asignación a grupos</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #EC0000">
-    <div class="m-icon">🖥️</div>
-    <div class="m-name">Host Management</div>
-    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGH · ~30 preguntas</div>
-    <div class="m-desc">RFM, deshabilitar detecciones, sensores inactivos, filtros de host</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #EC0000">
-    <div class="m-icon">🔍</div>
-    <div class="m-name">Rules Configuration</div>
-    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGH · ~30 preguntas</div>
-    <div class="m-desc">IOA rules, IOC (hash/IP/domain), ML exclusions, Sensor Visibility exclusions</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #F5821E">
-    <div class="m-icon">📊</div>
-    <div class="m-name">Dashboards & Reports</div>
-    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~25 preguntas</div>
-    <div class="m-desc">Audit logs, sensor reports, retención 90/365 días, UI vs API logs</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #F5821E">
-    <div class="m-icon">🔐</div>
-    <div class="m-name">User Management</div>
-    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~22 preguntas</div>
-    <div class="m-desc">Roles, permisos, RBAC, Falcon Administrator vs Analyst vs Read-Only</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #F5821E">
-    <div class="m-icon">📡</div>
-    <div class="m-name">Sensor Deployment</div>
-    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~22 preguntas</div>
-    <div class="m-desc">Instalación, CID, troubleshooting, versiones de sensor, RFM recovery</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #16a34a">
-    <div class="m-icon">👥</div>
-    <div class="m-name">Group Creation</div>
-    <div class="m-desc" style="color:#16a34a;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟢 LOW · ~10 preguntas</div>
-    <div class="m-desc">Static vs Dynamic groups, criterios de asignación, Host Groups</div>
-  </div>
-  <div class="module-card" style="border-left:3px solid #16a34a">
-    <div class="m-icon">⚡</div>
-    <div class="m-name">Workflows SOAR</div>
-    <div class="m-desc" style="color:#16a34a;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟢 LOW · ~14 preguntas</div>
-    <div class="m-desc">Fusion SOAR triggers, conditions, actions — automatización básica de workflows</div>
-  </div>
+  {% for ts in topic_stats %}
+  <a href="/examen/topico/{{ ts.slug }}/" class="module-card" style="border-left:3px solid {{ ts.color }};text-decoration:none;display:block;cursor:pointer;transition:border-color .15s,transform .1s" onmouseover="this.style.borderColor='{{ ts.color }}';this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+    <div class="m-icon">{{ ts.icon }}</div>
+    <div class="m-name" style="color:#f0f0f0">{{ ts.nombre }}</div>
+    <div class="m-desc" style="color:{{ ts.color }};font-size:.65rem;font-weight:700;margin-bottom:.3rem">
+      Max errores: {{ ts.max_errores }} · {{ ts.total }} preguntas
+    </div>
+    {% if ts.total > 0 %}
+    <div style="background:#1a1a1a;border-radius:3px;height:4px;margin:.4rem 0;overflow:hidden">
+      <div style="background:{{ ts.color }};width:{{ ts.pct }}%;height:100%;border-radius:3px"></div>
+    </div>
+    <div class="m-desc" style="display:flex;justify-content:space-between">
+      <span style="color:#86efac">✓ {{ ts.dominadas }}</span>
+      {% if ts.fallidas %}<span style="color:#fca5a5">✗ {{ ts.fallidas }}</span>{% endif %}
+      <span>{{ ts.pct }}%</span>
+    </div>
+    {% endif %}
+  </a>
+  {% endfor %}
 </div>
 
 <!-- Barra de progreso -->
@@ -402,6 +373,7 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   <div class="zona-header zona-peligro-hdr">
     🔴 Zona de Peligro Extremo — Más de 3 minutos promedio
     <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_peligro|length }} pregunta{{ zona_peligro|length|pluralize:"s" }})</span>
+    <a href="/examen/zona/repaso/peligro/" class="zona-btn" style="margin-left:.75rem;background:#7f1d1d;font-size:.72rem">🎯 Repasar todas</a>
   </div>
   <div class="zona-list">
     {% for item in zona_peligro %}
@@ -424,6 +396,7 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   <div class="zona-header zona-critica-hdr">
     🟠 Zona Crítica — Siempre fallas o tardas más de 1:30 min
     <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_critica|length }} pregunta{{ zona_critica|length|pluralize:"s" }})</span>
+    <a href="/examen/zona/repaso/critica/" class="zona-btn" style="margin-left:.75rem;background:#78350f;font-size:.72rem">🎯 Repasar todas</a>
   </div>
   <div class="zona-list">
     {% for item in zona_critica %}
@@ -446,6 +419,7 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   <div class="zona-header zona-alerta-hdr">
     🟡 Zona de Alerta — Entre 1 y 3 minutos (misclick o duda)
     <span style="margin-left:auto;font-weight:400;opacity:.8">({{ zona_alerta|length }} pregunta{{ zona_alerta|length|pluralize:"s" }})</span>
+    <a href="/examen/zona/repaso/alerta/" class="zona-btn" style="margin-left:.75rem;background:#166534;font-size:.72rem">🎯 Repasar todas</a>
   </div>
   <div class="zona-list">
     {% for item in zona_alerta %}
@@ -529,7 +503,7 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
 </div>
 
 {% block scripts %}
-{{ cobertura_json|json_script:"cobertura-data" }}
+{{ cobertura_data|json_script:"cobertura-data" }}
 <script>
 // ── Datos de preguntas ─────────────────────────────────────────
 const Q_DATA = {};

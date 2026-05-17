@@ -1,0 +1,739 @@
+[
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 1,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 213,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.519Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 2,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 118,
+    "tiempo_empleado": 12,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.533Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 3,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 175,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.545Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 4,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 244,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.559Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 5,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 178,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.572Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 6,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 83,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.589Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 7,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 15,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.602Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 8,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 183,
+    "tiempo_empleado": 22,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.616Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 9,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 104,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.630Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 10,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 157,
+    "tiempo_empleado": 31,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.643Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 11,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 139,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.660Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 12,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 237,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.673Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 13,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 186,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.692Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 14,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 4,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.711Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 15,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 158,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.725Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 16,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 23,
+    "tiempo_empleado": 3,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.737Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 17,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 19,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.751Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 18,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 171,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.769Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 19,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 235,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.782Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 20,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 190,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.796Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 21,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 155,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.809Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 22,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 119,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.822Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 23,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 95,
+    "tiempo_empleado": 10,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.838Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 24,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 48,
+    "tiempo_empleado": 1,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:24.851Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 25,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 167,
+    "tiempo_empleado": 7,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.865Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 26,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 200,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.878Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 27,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 195,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.891Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 28,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 49,
+    "tiempo_empleado": 15,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:24.907Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 29,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 123,
+    "tiempo_empleado": 31,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.920Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 30,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 220,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.934Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 31,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 182,
+    "tiempo_empleado": 10,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.947Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 32,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 93,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.960Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 33,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 90,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.974Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 34,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 31,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:24.988Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 35,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 174,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.002Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 36,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 15,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.015Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 37,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 129,
+    "tiempo_empleado": 11,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.029Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 38,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 20,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.044Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 39,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 177,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.057Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 40,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 186,
+    "tiempo_empleado": 8,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.069Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 41,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 147,
+    "tiempo_empleado": 7,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.083Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 42,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 1,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.097Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 43,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 180,
+    "tiempo_empleado": 28,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.111Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 44,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 100,
+    "tiempo_empleado": 57,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.125Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 45,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 142,
+    "tiempo_empleado": 2,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.139Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 46,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 154,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.152Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 47,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 210,
+    "tiempo_empleado": 19,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.167Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 48,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 169,
+    "tiempo_empleado": 3,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.182Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 49,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 212,
+    "tiempo_empleado": 13,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.195Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 50,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 94,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.209Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 51,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 193,
+    "tiempo_empleado": 17,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.223Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 52,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 81,
+    "tiempo_empleado": 27,
+    "resultado": "Incorrecto",
+    "fecha": "2026-05-16T22:31:25.236Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 53,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 92,
+    "tiempo_empleado": 14,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.261Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 54,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 225,
+    "tiempo_empleado": 14,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.275Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 55,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 86,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.289Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 56,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 26,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.302Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 57,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 120,
+    "tiempo_empleado": 27,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.316Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 58,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 61,
+    "tiempo_empleado": 21,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.334Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 59,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 80,
+    "tiempo_empleado": 6,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.349Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 60,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 219,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:31:25.362Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 61,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 16,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:36:24.453Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 62,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 42,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:37:23.806Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 63,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 1,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:37:48.912Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 64,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 205,
+    "tiempo_empleado": 9,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:12.767Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 65,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 156,
+    "tiempo_empleado": 5,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:29.809Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 66,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:38:54.174Z"
+  }
+},
+{
+  "model": "simulador.historialrespuesta",
+  "pk": 67,
+  "fields": {
+    "tenant": 2,
+    "pregunta": 35,
+    "tiempo_empleado": 4,
+    "resultado": "Correcto",
+    "fecha": "2026-05-16T22:39:06.501Z"
+  }
+}
+]

@@ -79,7 +79,10 @@
 
 <!-- Header -->
 <div class="exam-header">
-  <span class="exam-meta">Pregunta <strong class="text-cs-red">{{ numero }}</strong> de {{ total }}</span>
+  <span class="exam-meta">
+    {% if topic_nombre %}<span style="color:#F5821E;font-size:.72rem;font-weight:700;letter-spacing:.5px;margin-right:.5rem">{{ topic_nombre }}</span>{% endif %}
+    Pregunta <strong class="text-cs-red">{{ numero }}</strong> de {{ total }}
+  </span>
 
   <div class="timer-wrap">
     <span>⏱</span>
@@ -91,6 +94,7 @@
       <span style="color:var(--cs-green)">✓ <span id="score-ok">{{ correctas }}</span></span>
       &nbsp;
       <span style="color:var(--cs-danger)">✗ <span id="score-fail">{{ incorrectas }}</span></span>
+      {% if max_errores %}<span style="color:#555;font-size:.75rem">/{{ max_errores }}</span>{% endif %}
     </span>
     <button class="btn-toggle" id="btn-toggle-score" onclick="toggleScore()" title="Mostrar / ocultar puntaje">👁</button>
   </div>

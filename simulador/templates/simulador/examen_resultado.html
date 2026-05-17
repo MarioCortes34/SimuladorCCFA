@@ -89,22 +89,35 @@
 
   <!-- Score bar -->
   <div class="mb-4">
+    {% if tipo == 'topico' %}
+    <div class="d-flex justify-content-between mb-1">
+      <small class="text-cs-muted">Correctas: {{ correctas }}/{{ total }}</small>
+      <small class="text-cs-muted">Incorrectas: {{ incorrectas }} (límite: {{ max_errores }})</small>
+    </div>
+    {% else %}
     <div class="d-flex justify-content-between mb-1">
       <small class="text-cs-muted">0</small>
       <small class="text-cs-muted">Mínimo: {{ pass_score }}/{{ total }}</small>
       <small class="text-cs-muted">{{ total }}</small>
     </div>
+    {% endif %}
     <div style="background:#1E3A5F;border-radius:4px;height:14px;position:relative">
+      {% if tipo != 'topico' %}
       <div style="position:absolute;left:{% widthratio pass_score total 100 %}%;top:-4px;bottom:-4px;width:2px;background:#F5821E"></div>
+      {% endif %}
       <div style="width:{% widthratio correctas total 100 %}%;height:100%;border-radius:4px;
            background:{% if aprobado %}var(--cs-green){% else %}var(--cs-danger){% endif %}"></div>
     </div>
+    {% if tipo != 'topico' %}
     <div class="text-cs-muted mt-1" style="font-size:.75rem">La línea naranja indica el mínimo para aprobar</div>
+    {% endif %}
   </div>
 
   <div class="d-flex gap-2 justify-content-center flex-wrap">
     {% if tipo == 'zona_master' %}
     <a href="/examen/zona/" class="btn-cs-primary text-decoration-none">Repetir Zona</a>
+    {% elif tipo == 'topico' %}
+    <a href="/examen/topico/{{ topic_slug }}/" class="btn-cs-primary text-decoration-none">Repetir {{ topic_nombre }}</a>
     {% elif tipo == 'inteligente' %}
     <a href="/examen/inteligente/" class="btn-cs-primary text-decoration-none">Repetir Simulación</a>
     {% elif tipo == 'repaso' %}

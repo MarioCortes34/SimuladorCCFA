@@ -923,6 +923,7 @@ def examen_resultado(request):
         aprobado = correctas >= PASS_SCORE
 
     topic_nombre = exam.get('topic_nombre', '')
+    topic_slug   = exam.get('topic_slug', '')
     max_errores  = exam.get('max_errores')
 
     request.session.pop('exam', None)
@@ -941,6 +942,7 @@ def examen_resultado(request):
         'pregunta_fallida': pregunta_fallida,
         'tenant': tenant,
         'topic_nombre': topic_nombre,
+        'topic_slug': topic_slug,
         'max_errores': max_errores,
     })
 

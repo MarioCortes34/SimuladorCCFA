@@ -283,17 +283,57 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
   {% endfor %}
 </div>
 
-<!-- Módulos del examen -->
-<p class="section-title">Módulos del Examen</p>
+<!-- Módulos del examen (tópicos reales del examen CCFA) -->
+<p class="section-title">Tópicos del Examen CCFA</p>
 <div class="modules-grid">
-  <div class="module-card"><div class="m-icon">🏗️</div><div class="m-name">Core Architecture</div><div class="m-desc">AID, CID, Single Agent, Cloud-Native, RFM</div></div>
-  <div class="module-card"><div class="m-icon">🔍</div><div class="m-name">IOA / IOC / ML</div><div class="m-desc">Detección por comportamiento, evidencia forense y Machine Learning</div></div>
-  <div class="module-card"><div class="m-icon">📋</div><div class="m-name">Policy Management</div><div class="m-desc">Prevention, Sensor Update, Default Policies, Host Groups</div></div>
-  <div class="module-card"><div class="m-icon">🚫</div><div class="m-name">Exclusions</div><div class="m-desc">ML, IOA y Sensor Visibility Exclusions</div></div>
-  <div class="module-card"><div class="m-icon">🔐</div><div class="m-name">RBAC & Audit</div><div class="m-desc">Roles, permisos y retención de logs (365 / 90 días)</div></div>
-  <div class="module-card"><div class="m-icon">⚡</div><div class="m-name">RTR & Fusion SOAR</div><div class="m-desc">Respuesta remota y automatización de workflows</div></div>
-  <div class="module-card"><div class="m-icon">👁️</div><div class="m-name">OverWatch</div><div class="m-desc">Threat Hunting 24/7 por el equipo humano de CrowdStrike</div></div>
-  <div class="module-card"><div class="m-icon">📊</div><div class="m-name">Audit Logs</div><div class="m-desc">UI · API · Prevention Policy · RTR logs</div></div>
+  <div class="module-card" style="border-left:3px solid #EC0000">
+    <div class="m-icon">📋</div>
+    <div class="m-name">Policy Application</div>
+    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGHEST · ~45 preguntas</div>
+    <div class="m-desc">Prevention policies, Sensor Update, Default policies, asignación a grupos</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #EC0000">
+    <div class="m-icon">🖥️</div>
+    <div class="m-name">Host Management</div>
+    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGH · ~30 preguntas</div>
+    <div class="m-desc">RFM, deshabilitar detecciones, sensores inactivos, filtros de host</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #EC0000">
+    <div class="m-icon">🔍</div>
+    <div class="m-name">Rules Configuration</div>
+    <div class="m-desc" style="color:#EC0000;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🔴 HIGH · ~30 preguntas</div>
+    <div class="m-desc">IOA rules, IOC (hash/IP/domain), ML exclusions, Sensor Visibility exclusions</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #F5821E">
+    <div class="m-icon">📊</div>
+    <div class="m-name">Dashboards & Reports</div>
+    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~25 preguntas</div>
+    <div class="m-desc">Audit logs, sensor reports, retención 90/365 días, UI vs API logs</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #F5821E">
+    <div class="m-icon">🔐</div>
+    <div class="m-name">User Management</div>
+    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~22 preguntas</div>
+    <div class="m-desc">Roles, permisos, RBAC, Falcon Administrator vs Analyst vs Read-Only</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #F5821E">
+    <div class="m-icon">📡</div>
+    <div class="m-name">Sensor Deployment</div>
+    <div class="m-desc" style="color:#F5821E;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟡 MEDIUM · ~22 preguntas</div>
+    <div class="m-desc">Instalación, CID, troubleshooting, versiones de sensor, RFM recovery</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #16a34a">
+    <div class="m-icon">👥</div>
+    <div class="m-name">Group Creation</div>
+    <div class="m-desc" style="color:#16a34a;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟢 LOW · ~10 preguntas</div>
+    <div class="m-desc">Static vs Dynamic groups, criterios de asignación, Host Groups</div>
+  </div>
+  <div class="module-card" style="border-left:3px solid #16a34a">
+    <div class="m-icon">⚡</div>
+    <div class="m-name">Workflows SOAR</div>
+    <div class="m-desc" style="color:#16a34a;font-size:.65rem;font-weight:700;margin-bottom:.25rem">🟢 LOW · ~14 preguntas</div>
+    <div class="m-desc">Fusion SOAR triggers, conditions, actions — automatización básica de workflows</div>
+  </div>
 </div>
 
 <!-- Barra de progreso -->
@@ -448,25 +488,25 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
       {% if c.racha_limpia %}
         <span class="cob-pill cob-pill-ok"
               data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
-              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+              data-pid="{{ c.pregunta.pk }}">
           #{{ c.pregunta.numero }} ✓
         </span>
       {% elif c.solo_buenas %}
         <span class="cob-pill cob-pill-ok0"
               data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
-              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+              data-pid="{{ c.pregunta.pk }}">
           #{{ c.pregunta.numero }}
         </span>
       {% elif c.malas > 0 %}
         <span class="cob-pill cob-pill-mal"
               data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
-              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+              data-pid="{{ c.pregunta.pk }}">
           #{{ c.pregunta.numero }}
         </span>
       {% else %}
         <span class="cob-pill cob-pill-neu"
               data-tip="Apariciones: {{ c.apariciones }} | Buenas: {{ c.buenas }} | Malas: {{ c.malas }} | Prom: {{ c.t_prom }}s | Racha: {{ c.racha }}"
-              title="Q{{ c.pregunta.numero }}: {{ c.pregunta.enunciado|truncatechars:60 }}">
+              data-pid="{{ c.pregunta.pk }}">
           #{{ c.pregunta.numero }}
         </span>
       {% endif %}
@@ -478,8 +518,55 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
 <!-- Tooltip flotante para Mis Victorias -->
 <div id="cob-tooltip"></div>
 
+<!-- Modal: ver pregunta al hacer click en un pill -->
+<div id="q-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;overflow-y:auto;padding:2rem 1rem" onclick="cerrarModal(event)">
+  <div id="q-modal" style="max-width:680px;margin:auto;background:#111;border:1px solid #333;border-radius:.75rem;padding:1.5rem;position:relative">
+    <button onclick="document.getElementById('q-modal-overlay').style.display='none'" style="position:absolute;top:.75rem;right:.9rem;background:none;border:none;color:#666;font-size:1.2rem;cursor:pointer;line-height:1">✕</button>
+    <p id="q-modal-num" style="font-size:.72rem;color:#666;margin:0 0 .5rem;font-weight:700;letter-spacing:1px"></p>
+    <p id="q-modal-enunciado" style="font-size:.95rem;line-height:1.65;color:#f0f0f0;margin:0 0 1.25rem"></p>
+    <div id="q-modal-opciones"></div>
+  </div>
+</div>
+
 {% block scripts %}
+{{ cobertura_json|json_script:"cobertura-data" }}
 <script>
+// ── Datos de preguntas ─────────────────────────────────────────
+const Q_DATA = {};
+try {
+  JSON.parse(document.getElementById('cobertura-data').textContent)
+      .forEach(function(q){ Q_DATA[q.pk] = q; });
+} catch(e){}
+
+// ── Modal al clickear pill ────────────────────────────────────
+document.querySelectorAll('.cob-pill[data-pid]').forEach(function(el) {
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var q = Q_DATA[parseInt(el.dataset.pid)];
+    if (!q) return;
+    document.getElementById('q-modal-num').textContent = 'Pregunta #' + q.numero;
+    document.getElementById('q-modal-enunciado').textContent = q.enunciado;
+    var ops = document.getElementById('q-modal-opciones');
+    ops.innerHTML = '';
+    (q.opciones || []).forEach(function(op) {
+      var div = document.createElement('div');
+      div.style.cssText = 'background:#0f0f0f;border:1px solid #2a2a2a;border-radius:.4rem;padding:.6rem .9rem;margin-bottom:.4rem;font-size:.88rem;color:#ccc';
+      div.textContent = op;
+      ops.appendChild(div);
+    });
+    document.getElementById('q-modal-overlay').style.display = 'block';
+  });
+});
+function cerrarModal(e) {
+  if (e.target === document.getElementById('q-modal-overlay'))
+    document.getElementById('q-modal-overlay').style.display = 'none';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('q-modal-overlay').style.display = 'none';
+});
+
+// ── Tooltip flotante (position:fixed, nunca se recorta) ───────
 (function() {
   const tip = document.getElementById('cob-tooltip');
   document.querySelectorAll('.cob-pill[data-tip]').forEach(function(el) {
@@ -489,19 +576,14 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
       posicionar(e);
     });
     el.addEventListener('mousemove', posicionar);
-    el.addEventListener('mouseleave', function() {
-      tip.style.display = 'none';
-    });
+    el.addEventListener('mouseleave', function() { tip.style.display = 'none'; });
   });
   function posicionar(e) {
-    const GAP = 10;
-    const tw = tip.offsetWidth;
-    const th = tip.offsetHeight;
-    let x = e.clientX;
-    let y = e.clientY - th - GAP;
+    const GAP = 10, tw = tip.offsetWidth, th = tip.offsetHeight;
+    let x = e.clientX, y = e.clientY - th - GAP;
     if (y < 4) y = e.clientY + GAP;
-    if (x - tw / 2 < 4) x = tw / 2 + 4;
-    if (x + tw / 2 > window.innerWidth - 4) x = window.innerWidth - tw / 2 - 4;
+    if (x - tw/2 < 4) x = tw/2 + 4;
+    if (x + tw/2 > window.innerWidth - 4) x = window.innerWidth - tw/2 - 4;
     tip.style.left = x + 'px';
     tip.style.top  = y + 'px';
   }

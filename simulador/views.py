@@ -1,6 +1,7 @@
 import re
 import time
 import random
+import json
 from django.db.models import Avg, Count, Q
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
@@ -338,23 +339,32 @@ def inicio(request):
     cob_solo_ok    = sum(1 for c in cobertura if c['solo_buenas'] and not c['racha_limpia'])
     cob_con_fallas = sum(1 for c in cobertura if c['malas'] > 0)
 
+    cobertura_json = json.dumps([{
+        'pk':       c['pregunta'].pk,
+        'numero':   c['pregunta'].numero,
+        'enunciado': c['pregunta'].enunciado,
+        'opciones': c['pregunta'].opciones,
+        'correcta': c['pregunta'].respuesta_correcta,
+    } for c in cobertura])
+
     return render(request, 'simulador/inicio.html', {
-        'total':         total,
-        'categorias':    categorias,
-        'dominadas':     dominadas,
-        'fallidas':      fallidas,
-        'tenant':        tenant,
-        'zona_critica':  zona_critica[:10],
-        'zona_alerta':   zona_alerta[:10],
-        'zona_peligro':  zona_peligro[:10],
-        'sin_ver_count': sin_ver_count,
-        'inestables':    inestables[:10],
-        'ladrones':      ladrones,
-        'total_zona':    len(zona_ids_set),
-        'cobertura':     cobertura,
-        'cob_dominadas': cob_dominadas,
-        'cob_solo_ok':   cob_solo_ok,
-        'cob_con_fallas':cob_con_fallas,
+        'total':          total,
+        'categorias':     categorias,
+        'dominadas':      dominadas,
+        'fallidas':       fallidas,
+        'tenant':         tenant,
+        'zona_critica':   zona_critica[:10],
+        'zona_alerta':    zona_alerta[:10],
+        'zona_peligro':   zona_peligro[:10],
+        'sin_ver_count':  sin_ver_count,
+        'inestables':     inestables[:10],
+        'ladrones':       ladrones,
+        'total_zona':     len(zona_ids_set),
+        'cobertura':      cobertura,
+        'cob_dominadas':  cob_dominadas,
+        'cob_solo_ok':    cob_solo_ok,
+        'cob_con_fallas': cob_con_fallas,
+        'cobertura_json': cobertura_json,
     })
 
 
@@ -523,16 +533,22 @@ def examen_pregunta(request):
         request.session.modified = True
         return redirect('examen_resultado')
 
-    # ── Barajado de alternativas (se genera una vez y persiste en sesión) ──
-    shuf_key = f'shuf_{pregunta.pk}'
+    tipo = exam.get('tipo', 'normal')
+
+    # Zona master: shuffle fresco por aparición (clave por índice), sin pre-selección
+    if tipo == 'zona_master':
+        shuf_key = f'shuf_zm_{idx}'
+        respuesta_previa = ''
+    else:
+        shuf_key = f'shuf_{pregunta.pk}'
+        respuesta_previa = exam['respuestas'].get(str(pregunta.pk), '')
+
     if shuf_key not in exam:
         ops_barajadas, correcta_nueva = _barajar_opciones(pregunta.opciones, pregunta.respuesta_correcta)
         exam[shuf_key] = {'ops': ops_barajadas, 'cor': correcta_nueva}
         request.session['exam'] = exam
         request.session.modified = True
     opciones_display = exam[shuf_key]['ops']
-
-    respuesta_previa = exam['respuestas'].get(str(pregunta.pk), '')
     rp = exam.get('resultados_parcial', {})
     correctas_parcial   = sum(1 for v in rp.values() if v)
     incorrectas_parcial = sum(1 for v in rp.values() if not v)
@@ -585,7 +601,11 @@ def examen_navegar(request):
             exam['respuestas'][str(pregunta_id)] = respuesta
             try:
                 pq = Pregunta.objects.get(pk=pregunta_id)
-                shuf_data = exam.get(f'shuf_{pregunta_id}', {})
+                _tipo = exam.get('tipo', 'normal')
+                if _tipo == 'zona_master':
+                    shuf_data = exam.get(f'shuf_zm_{exam["index"]}', {})
+                else:
+                    shuf_data = exam.get(f'shuf_{pregunta_id}', {})
                 correcta_actual = shuf_data.get('cor', pq.respuesta_correcta)
                 exam.setdefault('resultados_parcial', {})[str(pregunta_id)] = \
                     _es_correcto(respuesta, correcta_actual)
@@ -605,7 +625,11 @@ def examen_navegar(request):
     if pregunta_id and respuesta:
         try:
             pq = Pregunta.objects.get(pk=pregunta_id)
-            shuf_data = exam.get(f'shuf_{pregunta_id}', {})
+            _tipo_nav = exam.get('tipo', 'normal')
+            if _tipo_nav == 'zona_master':
+                shuf_data = exam.get(f'shuf_zm_{exam["index"]}', {})
+            else:
+                shuf_data = exam.get(f'shuf_{pregunta_id}', {})
             correcta_actual = shuf_data.get('cor', pq.respuesta_correcta)
 
             es_correcto = _es_correcto(respuesta, correcta_actual)
@@ -659,57 +683,78 @@ def examen_resultado(request):
         return redirect('inicio')
 
     tenant = _get_tenant(request)
+    tipo = exam.get('tipo', 'normal')
     correctas = 0
     resultados = []
 
-    for pid in exam['preguntas']:
-        try:
-            pregunta = Pregunta.objects.get(pk=pid)
-        except Pregunta.DoesNotExist:
-            continue
-
-        respuesta_shuffled = exam['respuestas'].get(str(pid), '')
-        shuf_data = exam.get(f'shuf_{pid}', {})
-
-        if respuesta_shuffled:
-            if shuf_data:
-                correcta_actual = shuf_data.get('cor', pregunta.respuesta_correcta)
-                es_correcto = _es_correcto(respuesta_shuffled, correcta_actual)
-                # Mapear la respuesta barajada de vuelta a la opción original de BD
-                resp_texto = _texto_sin_letra(respuesta_shuffled)
-                respuesta_original = next(
-                    (op for op in pregunta.opciones if _texto_sin_letra(op) == resp_texto),
-                    respuesta_shuffled
+    if tipo == 'zona_master':
+        # Zona master: procesa cada pregunta única una sola vez usando resultados_parcial
+        rp = exam.get('resultados_parcial', {})
+        seen_pids = set()
+        for pid in exam['preguntas']:
+            if pid in seen_pids:
+                continue
+            seen_pids.add(pid)
+            try:
+                pregunta = Pregunta.objects.get(pk=pid)
+            except Pregunta.DoesNotExist:
+                continue
+            es_correcto = rp.get(str(pid), False)
+            if es_correcto:
+                correctas += 1
+            if str(pid) in rp:
+                _registrar_progreso(tenant, pregunta, es_correcto)
+                tiempo = exam.get('tiempos', {}).get(str(pid), 0)
+                HistorialRespuesta.objects.create(
+                    tenant=tenant, pregunta=pregunta,
+                    tiempo_empleado=tiempo,
+                    resultado='Correcto' if es_correcto else 'Incorrecto'
                 )
+    else:
+        for pid in exam['preguntas']:
+            try:
+                pregunta = Pregunta.objects.get(pk=pid)
+            except Pregunta.DoesNotExist:
+                continue
+
+            respuesta_shuffled = exam['respuestas'].get(str(pid), '')
+            shuf_data = exam.get(f'shuf_{pid}', {})
+
+            if respuesta_shuffled:
+                if shuf_data:
+                    correcta_actual = shuf_data.get('cor', pregunta.respuesta_correcta)
+                    es_correcto = _es_correcto(respuesta_shuffled, correcta_actual)
+                    resp_texto = _texto_sin_letra(respuesta_shuffled)
+                    respuesta_original = next(
+                        (op for op in pregunta.opciones if _texto_sin_letra(op) == resp_texto),
+                        respuesta_shuffled
+                    )
+                else:
+                    es_correcto = _es_correcto(respuesta_shuffled, pregunta.respuesta_correcta)
+                    respuesta_original = respuesta_shuffled
             else:
-                es_correcto = _es_correcto(respuesta_shuffled, pregunta.respuesta_correcta)
-                respuesta_original = respuesta_shuffled
-        else:
-            es_correcto = False
-            respuesta_original = ''
+                es_correcto = False
+                respuesta_original = ''
 
-        if es_correcto:
-            correctas += 1
+            if es_correcto:
+                correctas += 1
 
-        if respuesta_shuffled:
-            _registrar_progreso(tenant, pregunta, es_correcto)
-            tiempo = exam.get('tiempos', {}).get(str(pid), 0)
-            HistorialRespuesta.objects.create(
-                tenant=tenant,
-                pregunta=pregunta,
-                tiempo_empleado=tiempo,
-                resultado='Correcto' if es_correcto else 'Incorrecto'
-            )
+            if respuesta_shuffled:
+                _registrar_progreso(tenant, pregunta, es_correcto)
+                tiempo = exam.get('tiempos', {}).get(str(pid), 0)
+                HistorialRespuesta.objects.create(
+                    tenant=tenant, pregunta=pregunta,
+                    tiempo_empleado=tiempo,
+                    resultado='Correcto' if es_correcto else 'Incorrecto'
+                )
 
-        resultados.append({
-            'pregunta': pregunta,
-            'respuesta_dada_norm': _opcion_por_letra(pregunta, respuesta_original),
-            'correcta_norm': _opcion_por_letra(pregunta, pregunta.respuesta_correcta),
-            'es_correcto': es_correcto,
-            'tip': _tip_espanol(pregunta, es_correcto),
-        })
-
-    tipo = exam.get('tipo', 'normal')
+            resultados.append({
+                'pregunta': pregunta,
+                'respuesta_dada_norm': _opcion_por_letra(pregunta, respuesta_original),
+                'correcta_norm': _opcion_por_letra(pregunta, pregunta.respuesta_correcta),
+                'es_correcto': es_correcto,
+                'tip': _tip_espanol(pregunta, es_correcto),
+            })
     fallido_zona = exam.get('fallido', False)
     pregunta_fallida = None
     if fallido_zona and exam.get('pregunta_fallida_id'):

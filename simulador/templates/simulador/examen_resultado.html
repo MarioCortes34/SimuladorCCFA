@@ -60,6 +60,20 @@
     <div style="font-size:3.5rem">✅</div>
     <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡Repaso Completado!</h2>
     <p class="text-cs-muted">Zona <strong>{{ zona_origen|capfirst }}</strong> — {{ correctas }} correctas de {{ total }} respondidas.</p>
+  {% elif tipo == 'inestables_repaso' %}
+    {% if quedan_inestables == 0 %}
+      <div style="font-size:3.5rem">🏅</div>
+      <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡Todas Re-dominadas!</h2>
+      <p class="text-cs-muted">No quedan preguntas inestables. ¡Excelente consistencia!</p>
+    {% else %}
+      <div style="font-size:3.5rem">🔁</div>
+      <h2 class="fw-bold mt-2" style="color:#F5821E">Mini Test Completado</h2>
+      <p class="text-cs-muted">
+        {{ correctas }} correctas de {{ total }} respondidas.
+        <br><strong style="color:#fed7aa">Quedan {{ quedan_inestables }} pregunta{{ quedan_inestables|pluralize:"s" }} inestable{{ quedan_inestables|pluralize:"s" }}</strong>
+        — vuelve a hacer el Mini Test para seguir acumulando racha.
+      </p>
+    {% endif %}
   {% elif aprobado %}
     <div style="font-size:3.5rem">🏆</div>
     <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡APROBADO!</h2>
@@ -124,6 +138,8 @@
     <a href="/examen/topico/{{ topic_slug }}/" class="btn-cs-primary text-decoration-none">Repetir {{ topic_nombre }}</a>
     {% elif tipo == 'zona_repaso' %}
     <a href="/examen/zona/repaso/{{ zona_origen }}/" class="btn-cs-primary text-decoration-none">Repetir Repaso</a>
+    {% elif tipo == 'inestables_repaso' %}
+    <a href="/examen/inestables/repaso/" class="btn-cs-primary text-decoration-none">Repetir Mini Test</a>
     {% elif tipo == 'inteligente' %}
     <a href="/examen/inteligente/" class="btn-cs-primary text-decoration-none">Repetir Simulación</a>
     {% elif tipo == 'repaso' %}

@@ -583,6 +583,30 @@ def examen_zona_iniciar(request):
     return redirect('examen_pregunta')
 
 
+def examen_inestables_repaso_iniciar(request):
+    """Mini Test de Inestables: muestra cada pregunta inestable una vez.
+    Las respuestas acumulan racha. Cuando racha >= 2 la pregunta deja de ser inestable."""
+    tenant = _get_tenant(request)
+    ids_inestables = [
+        p.pregunta_id
+        for p in ProgresoPregunta.objects.filter(tenant=tenant)
+        if p.inestable
+    ]
+    if not ids_inestables:
+        return redirect('inicio')
+    random.shuffle(ids_inestables)
+    request.session['exam'] = {
+        'preguntas': ids_inestables,
+        'index': 0,
+        'respuestas': {},
+        'resultados_parcial': {},
+        'terminado': False,
+        'inicio_ts': int(time.time()),
+        'tipo': 'inestables_repaso',
+    }
+    return redirect('examen_pregunta')
+
+
 def examen_zona_repaso_iniciar(request, zona):
     """Repaso de zona: examen normal con todas las preguntas de esa zona."""
     tenant = _get_tenant(request)
@@ -693,7 +717,7 @@ def examen_pregunta(request):
     incorrectas_parcial = sum(1 for v in rp.values() if not v)
 
     _tipo = exam.get('tipo', 'normal')
-    _timed = _tipo not in ('topico', 'zona_repaso')
+    _timed = _tipo not in ('topico', 'zona_repaso', 'inestables_repaso')
 
     return render(request, 'simulador/examen_pregunta.html', {
         'pregunta': pregunta,
@@ -936,8 +960,8 @@ def examen_resultado(request):
         aprobado = not fallido_zona and incorrectas == 0
     elif tipo in ('topico',):
         aprobado = not fallido_zona
-    elif tipo == 'zona_repaso':
-        aprobado = True  # repaso de zona no tiene pase/falle
+    elif tipo in ('zona_repaso', 'inestables_repaso'):
+        aprobado = True
     else:
         aprobado = correctas >= PASS_SCORE
 
@@ -945,6 +969,13 @@ def examen_resultado(request):
     topic_slug   = exam.get('topic_slug', '')
     max_errores  = exam.get('max_errores')
     zona_origen  = exam.get('zona_origen', '')
+
+    # Para inestables_repaso: cuántas siguen inestables después del test
+    quedan_inestables = 0
+    if tipo == 'inestables_repaso':
+        quedan_inestables = sum(
+            1 for p in ProgresoPregunta.objects.filter(tenant=tenant) if p.inestable
+        )
 
     request.session.pop('exam', None)
 
@@ -965,6 +996,7 @@ def examen_resultado(request):
         'topic_slug': topic_slug,
         'max_errores': max_errores,
         'zona_origen': zona_origen,
+        'quedan_inestables': quedan_inestables,
     })
 
 

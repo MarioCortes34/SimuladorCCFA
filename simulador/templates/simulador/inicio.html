@@ -328,15 +328,16 @@ details[open] .cob-summary::before { transform: rotate(90deg); }
 {% if inestables %}
 <p class="section-title" style="margin-top:2rem">⚠️ Preguntas Inestables — Antes dominadas, ahora fallando</p>
 <div style="border:1px solid #78350f;border-radius:.5rem;overflow:hidden;margin-bottom:1rem">
-  <div style="background:#1c0d00;padding:.6rem 1rem;font-size:.8rem;font-weight:700;color:#fed7aa;border-bottom:1px solid #78350f">
-    🔶 Estas preguntas las tenías dominadas pero volviste a fallarlas — son tu mayor riesgo
-    <span style="margin-left:auto;float:right;font-weight:400;opacity:.8">({{ inestables|length }} pregunta{{ inestables|length|pluralize:"s" }})</span>
+  <div style="background:#1c0d00;padding:.6rem 1rem;font-size:.8rem;font-weight:700;color:#fed7aa;border-bottom:1px solid #78350f;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem">
+    <span>🔶 Estas preguntas las tenías dominadas pero volviste a fallarlas — son tu mayor riesgo
+    <span style="margin-left:.5rem;font-weight:400;opacity:.8">({{ inestables|length }} pregunta{{ inestables|length|pluralize:"s" }})</span></span>
+    <a href="/examen/inestables/repaso/" class="zona-btn" style="background:#92400e;border-color:#b45309;color:#fde68a;font-weight:700">🔁 Mini Test</a>
   </div>
   {% for item in inestables %}
   <div class="inest-item">
     <span class="inest-num">#{{ item.pregunta.numero }}</span>
     <span class="inest-text">{{ item.pregunta.enunciado|truncatechars:90 }}</span>
-    <span class="inest-badge">racha: {{ item.racha }}</span>
+    <span class="inest-badge">Racha: {{ item.racha }}/2</span>
     <a href="/quiz/?modo=pregunta_{{ item.pregunta.pk }}&reiniciar=1" class="zona-btn" style="margin-left:.5rem">Practicar</a>
   </div>
   {% endfor %}

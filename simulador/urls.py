@@ -13,6 +13,7 @@ urlpatterns = [
     path("examen/ineditas/",       views.examen_ineditas_iniciar,   name="examen_ineditas"),
     path("examen/zona/",           views.examen_zona_iniciar,       name="examen_zona"),
     path("examen/zona/repaso/<str:zona>/", views.examen_zona_repaso_iniciar, name="examen_zona_repaso"),
+    path("examen/inestables/repaso/",      views.examen_inestables_repaso_iniciar, name="examen_inestables_repaso"),
     path("examen/topico/<slug:topic_slug>/", views.examen_topico_iniciar,  name="examen_topico"),
     path("quiz/",                  views.quiz,                      name="quiz"),
     path("verificar/",             views.verificar,                 name="verificar"),

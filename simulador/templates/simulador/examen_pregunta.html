@@ -162,6 +162,7 @@
 const CSRF        = "{{ csrf_token }}";
 const PID         = "{{ pregunta.pk }}";
 const ES_ULTIMA   = {{ es_ultima|yesno:"true,false" }};
+const TIMED       = {{ timed|yesno:"true,false" }};
 let remaining     = {{ remaining }};
 let selectedOption = "{{ respuesta_previa|escapejs }}";
 let feedbackMostrado = false;
@@ -319,10 +320,13 @@ function fmtTime(s) {
   return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
 }
 function tick() {
+  if (!TIMED) {
+    timerEl.textContent = '∞';
+    return;
+  }
   if (remaining <= 0) {
     timerEl.textContent = '00:00';
     timerEl.classList.add('urgent');
-    // Auto-submit por tiempo
     document.getElementById('input-respuesta').value = selectedOption || '';
     document.getElementById('input-action').value    = 'finalizar';
     document.getElementById('form-exam').style.display = 'block';

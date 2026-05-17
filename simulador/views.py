@@ -110,7 +110,10 @@ def _barajar_opciones(opciones, respuesta_correcta):
     texto_correcto = textos[idx_orig]
     random.shuffle(textos)
     nuevas_opciones = [f"{l}) {t}" for l, t in zip(letras, textos)]
-    nueva_pos = textos.index(texto_correcto)
+    try:
+        nueva_pos = textos.index(texto_correcto)
+    except ValueError:
+        nueva_pos = 0
     nueva_correcta = letras[nueva_pos]
     return nuevas_opciones, nueva_correcta
 
@@ -612,7 +615,7 @@ def examen_zona_repaso_iniciar(request, zona):
         'resultados_parcial': {},
         'terminado': False,
         'inicio_ts': int(time.time()),
-        'tipo': 'repaso',
+        'tipo': 'zona_repaso',
         'zona_origen': zona,
     }
     return redirect('examen_pregunta')
@@ -689,6 +692,9 @@ def examen_pregunta(request):
     correctas_parcial   = sum(1 for v in rp.values() if v)
     incorrectas_parcial = sum(1 for v in rp.values() if not v)
 
+    _tipo = exam.get('tipo', 'normal')
+    _timed = _tipo not in ('topico', 'zona_repaso')
+
     return render(request, 'simulador/examen_pregunta.html', {
         'pregunta': pregunta,
         'opciones_display': opciones_display,
@@ -699,11 +705,12 @@ def examen_pregunta(request):
         'respuesta_previa': respuesta_previa,
         'puede_retroceder': idx > 0,
         'es_ultima': idx == total - 1,
-        'tipo': exam.get('tipo', 'normal'),
+        'tipo': _tipo,
         'correctas': correctas_parcial,
         'incorrectas': incorrectas_parcial,
         'max_errores': exam.get('max_errores'),
         'topic_nombre': exam.get('topic_nombre', ''),
+        'timed': _timed,
     })
 
 
@@ -915,16 +922,29 @@ def examen_resultado(request):
     incorrectas = total - correctas
     porcentaje = int(correctas / total * 100) if total else 0
 
+    # Para tópico: estadísticas basadas solo en preguntas respondidas
+    if tipo == 'topico':
+        rp = exam.get('resultados_parcial', {})
+        n_resp = len(rp)
+        correctas   = sum(1 for v in rp.values() if v)
+        incorrectas = n_resp - correctas
+        total       = n_resp
+        porcentaje  = int(correctas / total * 100) if total else 0
+        resultados  = [r for r in resultados if r.get('respuesta_dada_norm')]
+
     if tipo == 'zona_master':
         aprobado = not fallido_zona and incorrectas == 0
-    elif tipo == 'topico':
+    elif tipo in ('topico',):
         aprobado = not fallido_zona
+    elif tipo == 'zona_repaso':
+        aprobado = True  # repaso de zona no tiene pase/falle
     else:
         aprobado = correctas >= PASS_SCORE
 
     topic_nombre = exam.get('topic_nombre', '')
     topic_slug   = exam.get('topic_slug', '')
     max_errores  = exam.get('max_errores')
+    zona_origen  = exam.get('zona_origen', '')
 
     request.session.pop('exam', None)
 
@@ -944,6 +964,7 @@ def examen_resultado(request):
         'topic_nombre': topic_nombre,
         'topic_slug': topic_slug,
         'max_errores': max_errores,
+        'zona_origen': zona_origen,
     })
 
 

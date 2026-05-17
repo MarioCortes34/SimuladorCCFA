@@ -56,6 +56,10 @@
       <h2 class="fw-bold mt-2" style="color:var(--cs-danger)">LÍMITE SUPERADO</h2>
       <p class="text-cs-muted">Superaste el máximo de <strong>{{ max_errores }}</strong> error{{ max_errores|pluralize:"es" }} en <strong>{{ topic_nombre }}</strong>. ¡Vuelve a intentarlo!</p>
     {% endif %}
+  {% elif tipo == 'zona_repaso' %}
+    <div style="font-size:3.5rem">✅</div>
+    <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡Repaso Completado!</h2>
+    <p class="text-cs-muted">Zona <strong>{{ zona_origen|capfirst }}</strong> — {{ correctas }} correctas de {{ total }} respondidas.</p>
   {% elif aprobado %}
     <div style="font-size:3.5rem">🏆</div>
     <h2 class="fw-bold mt-2" style="color:var(--cs-green)">¡APROBADO!</h2>
@@ -118,6 +122,8 @@
     <a href="/examen/zona/" class="btn-cs-primary text-decoration-none">Repetir Zona</a>
     {% elif tipo == 'topico' %}
     <a href="/examen/topico/{{ topic_slug }}/" class="btn-cs-primary text-decoration-none">Repetir {{ topic_nombre }}</a>
+    {% elif tipo == 'zona_repaso' %}
+    <a href="/examen/zona/repaso/{{ zona_origen }}/" class="btn-cs-primary text-decoration-none">Repetir Repaso</a>
     {% elif tipo == 'inteligente' %}
     <a href="/examen/inteligente/" class="btn-cs-primary text-decoration-none">Repetir Simulación</a>
     {% elif tipo == 'repaso' %}
